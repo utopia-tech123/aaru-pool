@@ -6,7 +6,6 @@ const navLinks = [
   { href: "#features", label: "Features" },
   { href: "#tokenomics", label: "Tokenomics" },
   { href: "#roadmap", label: "Roadmap" },
-  { href: "#about", label: "About" },
   { href: "#faq", label: "FAQs" },
   { href: "#subscribe", label: "Subscribe" },
 ];
