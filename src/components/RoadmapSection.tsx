@@ -109,7 +109,7 @@ const RoadmapSection = () => {
         </div>
 
         {/* Cards grid */}
-        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {milestones.map((m) => {
             const cfg = statusConfig[m.status as keyof typeof statusConfig];
             return (

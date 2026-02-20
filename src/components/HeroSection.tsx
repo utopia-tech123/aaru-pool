@@ -74,11 +74,11 @@ const HeroSection = () => {
         </div>
 
         {/* Eyebrow */}
-        <p className="font-heading text-xs md:text-sm tracking-[0.3em] uppercase text-primary/70 mb-4">
-          The Field of Eternal Yield | DAO Governed | AI Powered
+        <p className="font-heading text-[10px] sm:text-xs md:text-sm tracking-[0.15em] sm:tracking-[0.3em] uppercase text-primary/70 mb-4 px-2">
+          The Field of Eternal Yield · DAO Governed · AI Powered
         </p>
 
-        <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold mb-6 pb-2 leading-tight tracking-tight">
+        <h1 className="font-heading text-3xl sm:text-5xl md:text-7xl font-bold mb-6 pb-3 leading-tight tracking-tight">
           <span className="text-gradient-gold">Rise with the Chosen.</span>
           <br />
           <span className="text-foreground">Own the Protocol.</span>
@@ -86,40 +86,40 @@ const HeroSection = () => {
           <span className="text-gradient-green">Govern the Vault.</span>
         </h1>
 
-        <p className="max-w-2xl mx-auto text-base md:text-lg text-muted-foreground mb-4 font-light leading-relaxed">
+        <p className="max-w-2xl mx-auto text-sm md:text-lg text-muted-foreground mb-4 font-light leading-relaxed px-1">
           Aaru Pool is a decentralized, non-custodial DeFi protocol powered by AI agents and epoch-based
           pools. Early members shape governance and unlock exclusive high-yield vaults, before the gates open to all.
         </p>
 
         {/* DAO urgency line */}
-        <p className="max-w-xl mx-auto text-sm text-primary/80 mb-10 font-semibold tracking-wide">
+        <p className="max-w-xl mx-auto text-xs sm:text-sm text-primary/80 mb-8 font-semibold tracking-wide px-2">
           ⚡ Aaru DAO seats are limited. Secure yours before the first epoch begins.
         </p>
 
         {/* CTA buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-3 justify-center px-2">
           <a
             href="#subscribe"
-            className="inline-flex items-center justify-center gap-2 bg-accent text-white font-bold text-sm tracking-widest uppercase px-10 py-4 rounded-full glow-green hover:opacity-90 transition-all duration-200 shadow-lg"
+            className="inline-flex items-center justify-center gap-2 bg-accent text-white font-bold text-xs sm:text-sm tracking-widest uppercase px-7 sm:px-10 py-4 rounded-full glow-green hover:opacity-90 transition-all duration-200 shadow-lg"
           >
             <span>𓂀</span>
             Join the DAO: Get Early Access
           </a>
           <a
             href="#features"
-            className="inline-flex items-center justify-center gap-2 glass-gold text-primary font-semibold text-sm tracking-widest uppercase px-8 py-4 rounded-full hover:bg-primary/15 transition-all duration-200"
+            className="inline-flex items-center justify-center gap-2 glass-gold text-primary font-semibold text-xs sm:text-sm tracking-widest uppercase px-7 sm:px-8 py-4 rounded-full hover:bg-primary/15 transition-all duration-200"
           >
             Explore the Vault
           </a>
         </div>
 
         {/* Trust micro-copy */}
-        <p className="mt-4 text-xs text-muted-foreground opacity-60 tracking-wide">
+        <p className="mt-4 text-[10px] sm:text-xs text-muted-foreground opacity-60 tracking-wide px-2">
           Non-custodial · ZK-private · DAO governed · Audited smart contracts
         </p>
 
         {/* Stats bar */}
-        <div className="mt-14 mx-auto max-w-2xl glass-gold rounded-2xl px-4 sm:px-6 py-5 grid grid-cols-3 gap-2 sm:gap-4 relative overflow-hidden">
+        <div className="mt-10 mx-auto max-w-2xl glass-gold rounded-2xl px-3 sm:px-6 py-4 sm:py-5 grid grid-cols-3 gap-2 sm:gap-4 relative overflow-hidden">
           <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
           {[
             { label: "Total Supply", value: "1B $AARU" },
@@ -127,8 +127,8 @@ const HeroSection = () => {
             { label: "Target Raise", value: "$4.97M" },
           ].map((s) => (
             <div key={s.label} className="text-center">
-              <p className="font-heading text-base sm:text-lg md:text-xl font-bold text-gradient-gold">{s.value}</p>
-              <p className="text-[10px] sm:text-xs text-muted-foreground mt-1 tracking-wide uppercase">{s.label}</p>
+              <p className="font-heading text-sm sm:text-lg md:text-xl font-bold text-gradient-gold">{s.value}</p>
+              <p className="text-[9px] sm:text-xs text-muted-foreground mt-1 tracking-wide uppercase leading-tight">{s.label}</p>
             </div>
           ))}
         </div>

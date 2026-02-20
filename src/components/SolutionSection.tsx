@@ -32,14 +32,14 @@ const SolutionSection = () => {
           Token holders govern strategies, ensuring alignment and oversight.
         </p>
 
-        {/* Epoch flow — single unified responsive grid */}
-        <div className="max-w-3xl mx-auto mb-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* Epoch flow */}
+        <div className="max-w-3xl mx-auto mb-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
             {steps.map((s) => (
-              <div key={s.label} className="glass-gold rounded-2xl p-5 flex flex-col items-center text-center gap-3 hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 glow-card">
-                <span className="text-3xl">{s.icon}</span>
-                <span className="font-heading text-xs tracking-widest uppercase text-primary font-semibold">{s.label}</span>
-                <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
+              <div key={s.label} className="glass-gold rounded-2xl p-4 sm:p-5 flex flex-col items-center text-center gap-2 sm:gap-3 hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 glow-card">
+                <span className="text-2xl sm:text-3xl">{s.icon}</span>
+                <span className="font-heading text-[10px] sm:text-xs tracking-widest uppercase text-primary font-semibold">{s.label}</span>
+                <p className="text-[10px] sm:text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -82,7 +82,7 @@ const SolutionSection = () => {
                 emerald: false,
               },
             ].map((c) => (
-              <div key={c.title} className={`rounded-2xl p-7 glow-card ${c.emerald ? "glass-emerald" : "glass-gold"}`}>
+              <div key={c.title} className={`rounded-2xl p-5 sm:p-7 glow-card ${c.emerald ? "glass-emerald" : "glass-gold"}`}>
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">{c.icon}</span>
