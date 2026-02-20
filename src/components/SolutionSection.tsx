@@ -11,6 +11,7 @@ const steps = [
 const SolutionSection = () => {
   return (
     <section id="solution" className="py-20 bg-gradient-egyptian relative overflow-hidden">
+
       <div className="absolute inset-0 mesh-dot opacity-20 pointer-events-none" />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-40 bg-primary/6 blur-[100px] pointer-events-none" />
       <FloatingLotusCluster lotuses={[
@@ -89,8 +90,8 @@ const SolutionSection = () => {
                   <span
                     className="text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-full"
                     style={c.emerald
-                      ? { background: "hsl(162 55% 48% / 0.12)", border: "1px solid hsl(162 55% 48% / 0.3)", color: "hsl(162 65% 65%)" }
-                      : { background: "hsl(43 78% 62% / 0.1)",  border: "1px solid hsl(43 78% 62% / 0.3)", color: "hsl(43 85% 72%)" }
+                      ? { background: "hsl(var(--accent) / 0.12)", border: "1px solid hsl(var(--accent) / 0.3)", color: "hsl(var(--accent))" }
+                      : { background: "hsl(var(--primary) / 0.10)", border: "1px solid hsl(var(--primary) / 0.3)", color: "hsl(var(--primary))" }
                     }
                   >
                     {c.badge}

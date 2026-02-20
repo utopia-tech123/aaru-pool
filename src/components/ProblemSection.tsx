@@ -41,7 +41,7 @@ const ProblemSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Label */}
         <div className="flex justify-center mb-5">
-          <span className="badge-pill" style={{ background: "hsl(0 72% 51% / 0.1)", borderColor: "hsl(0 72% 51% / 0.3)", color: "hsl(0 72% 70%)" }}>
+          <span className="badge-pill" style={{ background: "hsl(var(--destructive) / 0.1)", borderColor: "hsl(var(--destructive) / 0.3)", color: "hsl(var(--destructive))" }}>
             The Problem
           </span>
         </div>

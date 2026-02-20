@@ -13,10 +13,11 @@ interface NileWaveProps {
 }
 
 export const NileWave = ({ flip = false, variant = "subtle", className = "" }: NileWaveProps) => {
+  // These look fine in dark. In light mode the fills are still subtle coloured overlays so they remain visible.
   const fills: Record<string, [string, string]> = {
-    gold:    ["hsl(43 78% 62% / 0.08)",  "hsl(43 78% 62% / 0.04)"],
-    emerald: ["hsl(162 55% 48% / 0.08)", "hsl(162 55% 48% / 0.04)"],
-    subtle:  ["hsl(43 78% 62% / 0.05)",  "hsl(162 55% 48% / 0.03)"],
+    gold:    ["hsl(43 70% 42% / 0.07)",  "hsl(43 70% 42% / 0.04)"],
+    emerald: ["hsl(162 55% 36% / 0.07)", "hsl(162 55% 36% / 0.04)"],
+    subtle:  ["hsl(43 70% 42% / 0.05)",  "hsl(162 55% 36% / 0.03)"],
   };
   const [f1, f2] = fills[variant];
 
@@ -55,14 +56,17 @@ interface LotusProps {
 
 export const Lotus = ({ className = "", style, color = "gold" }: LotusProps) => {
   const stroke = color === "emerald"
-    ? "hsl(162 55% 48% / 0.55)"
-    : "hsl(43 78% 62% / 0.55)";
+    ? "hsl(162 55% 40% / 0.55)"
+    : "hsl(43 70% 45% / 0.55)";
   const fill = color === "emerald"
-    ? "hsl(162 40% 20% / 0.35)"
-    : "hsl(43 40% 20% / 0.35)";
+    ? "hsl(162 40% 50% / 0.20)"
+    : "hsl(43 50% 50% / 0.20)";
   const center = color === "emerald"
-    ? "hsl(162 65% 70% / 0.8)"
-    : "hsl(43 85% 75% / 0.8)";
+    ? "hsl(162 55% 45% / 0.85)"
+    : "hsl(43 78% 55% / 0.85)";
+  const shadow = color === "emerald"
+    ? "hsl(162 55% 36% / 0.10)"
+    : "hsl(43 70% 42% / 0.10)";
 
   return (
     <svg
@@ -73,10 +77,10 @@ export const Lotus = ({ className = "", style, color = "gold" }: LotusProps) => 
       style={{ willChange: "transform", ...style }}
       aria-hidden
     >
-      <ellipse cx="24" cy="40" rx="9" ry="3" fill={color === "emerald" ? "hsl(162 55% 48% / 0.1)" : "hsl(43 78% 62% / 0.1)"} />
+      <ellipse cx="24" cy="40" rx="9" ry="3" fill={shadow} />
       <path d="M24 36 C24 36 13 25 15 13 C17 5 24 10 24 10" stroke={stroke} strokeWidth="1.5" fill={fill} />
       <path d="M24 36 C24 36 35 25 33 13 C31 5 24 10 24 10" stroke={stroke} strokeWidth="1.5" fill={fill} />
-      <path d="M24 36 C24 36 17 21 24 10 C31 21 24 36 24 36Z" stroke={stroke} strokeWidth="1.5" fill={color === "emerald" ? "hsl(162 55% 30% / 0.45)" : "hsl(43 55% 30% / 0.45)"} />
+      <path d="M24 36 C24 36 17 21 24 10 C31 21 24 36 24 36Z" stroke={stroke} strokeWidth="1.5" fill={color === "emerald" ? "hsl(162 55% 35% / 0.30)" : "hsl(43 55% 35% / 0.30)"} />
       <circle cx="24" cy="10" r="3" fill={center} />
     </svg>
   );
@@ -155,9 +159,9 @@ export const NileRipple = ({ className = "" }: { className?: string }) => (
   <div className={`w-full overflow-hidden pointer-events-none select-none ${className}`} style={{ height: 48 }} aria-hidden>
     <svg viewBox="0 0 900 48" preserveAspectRatio="none" className="w-full h-full">
       {[
-        { y: 24, color: "hsl(43 78% 62%)",  delay: "0s",   dur: "3s" },
-        { y: 32, color: "hsl(162 55% 48%)", delay: "0.7s", dur: "4s" },
-        { y: 16, color: "hsl(43 78% 62%)",  delay: "1.4s", dur: "3.5s" },
+        { y: 24, color: "hsl(43 70% 42%)",  delay: "0s",   dur: "3s" },
+        { y: 32, color: "hsl(162 55% 36%)", delay: "0.7s", dur: "4s" },
+        { y: 16, color: "hsl(43 70% 42%)",  delay: "1.4s", dur: "3.5s" },
       ].map((r, i) => (
         <path
           key={i}

@@ -56,7 +56,7 @@ const TokenomicsSection = () => {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-white/5">
+                <tr className="border-b border-border/30">
                   {["Allocation", "% Total", "Tokens", "TGE Unlock", "Cliff", "Vesting"].map((h) => (
                     <th key={h} className="text-left py-4 px-6 text-muted-foreground font-body font-medium text-xs uppercase tracking-widest whitespace-nowrap">
                       {h}
@@ -66,7 +66,7 @@ const TokenomicsSection = () => {
               </thead>
               <tbody>
                 {allocations.map((a) => (
-                  <tr key={a.name} className="border-b border-white/5 last:border-0 hover:bg-white/2 transition-colors">
+                  <tr key={a.name} className="border-b border-border/20 last:border-0 hover:bg-muted/20 transition-colors">
                     <td className="py-4 px-6 text-foreground font-medium">{a.name}</td>
                     <td className="py-4 px-6 text-accent font-semibold">{a.pct}</td>
                     <td className="py-4 px-6 text-foreground">{a.tokens}</td>
