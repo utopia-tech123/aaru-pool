@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         heading: ["NotoSansEgyptian", "Cinzel", "serif"],
-        body: ["Space Grotesk", "sans-serif"],
+        body: ["Montserrat", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
