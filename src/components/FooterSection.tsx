@@ -3,7 +3,8 @@ import { Send, Twitter, MessageCircle } from "lucide-react";
 
 const FooterSection = () => {
   return (
-    <footer className="relative border-t border-white/5 overflow-hidden">
+    <div className="dark">
+    <footer className="relative border-t border-white/5 overflow-hidden bg-background text-foreground">
       <div className="absolute inset-0 mesh-dot opacity-10 pointer-events-none" />
 
       {/* Main footer content */}
@@ -81,6 +82,7 @@ const FooterSection = () => {
         </div>
       </div>
     </footer>
+    </div>
   );
 };
 

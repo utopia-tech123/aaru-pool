@@ -11,6 +11,7 @@ const HieroglyphBar = () => (
 
 const HeroSection = () => {
   return (
+    <div className="dark">
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background image */}
       <div
@@ -133,6 +134,7 @@ const HeroSection = () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 
