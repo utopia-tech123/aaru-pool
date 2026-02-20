@@ -2,9 +2,9 @@ import heroBg from "@/assets/hero-bg.jpg";
 import avatar from "@/assets/avatar.jpeg";
 
 const HieroglyphBar = () => (
-  <div className="flex items-center justify-center gap-1 opacity-30 select-none pointer-events-none" aria-hidden>
+  <div className="flex items-center justify-center gap-1 opacity-30 select-none pointer-events-none overflow-hidden" aria-hidden>
     {["𓂀","𓆣","𓇳","𓂋","𓁹","𓆙","𓏏","𓃭","𓆑","𓅓","𓇯","𓂝","𓆗","𓃠","𓇼","𓂀"].map((g, i) => (
-      <span key={i} className="font-['NotoSansEgyptian'] text-primary text-lg md:text-xl">{g}</span>
+      <span key={i} className="font-['NotoSansEgyptian'] text-primary text-base md:text-xl shrink-0">{g}</span>
     ))}
   </div>
 );
@@ -30,11 +30,11 @@ const HeroSection = () => {
       <div className="absolute inset-0 mesh-grid opacity-30 pointer-events-none" />
 
       {/* Egyptian corner ornaments */}
-      <div className="absolute top-24 left-6 md:left-12 opacity-15 pointer-events-none select-none" aria-hidden>
+      <div className="hidden sm:block absolute top-24 left-6 md:left-12 opacity-15 pointer-events-none select-none" aria-hidden>
         <div className="font-['NotoSansEgyptian'] text-primary text-5xl md:text-7xl leading-none">𓇳</div>
         <div className="font-['NotoSansEgyptian'] text-primary text-3xl md:text-5xl leading-none mt-1 ml-2">𓂀</div>
       </div>
-      <div className="absolute top-24 right-6 md:right-12 opacity-15 pointer-events-none select-none text-right" aria-hidden>
+      <div className="hidden sm:block absolute top-24 right-6 md:right-12 opacity-15 pointer-events-none select-none text-right" aria-hidden>
         <div className="font-['NotoSansEgyptian'] text-primary text-5xl md:text-7xl leading-none">𓆣</div>
         <div className="font-['NotoSansEgyptian'] text-primary text-3xl md:text-5xl leading-none mt-1 mr-2">𓁹</div>
       </div>
@@ -118,7 +118,7 @@ const HeroSection = () => {
         </p>
 
         {/* Stats bar */}
-        <div className="mt-14 mx-auto max-w-2xl glass-gold rounded-2xl px-6 py-5 grid grid-cols-3 gap-4 relative overflow-hidden">
+        <div className="mt-14 mx-auto max-w-2xl glass-gold rounded-2xl px-4 sm:px-6 py-5 grid grid-cols-3 gap-2 sm:gap-4 relative overflow-hidden">
           <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
           {[
             { label: "Total Supply", value: "1B $AARU" },
@@ -126,15 +126,10 @@ const HeroSection = () => {
             { label: "Target Raise", value: "$4.97M" },
           ].map((s) => (
             <div key={s.label} className="text-center">
-              <p className="font-heading text-lg md:text-xl font-bold text-gradient-gold">{s.value}</p>
-              <p className="text-xs text-muted-foreground mt-1 tracking-wide uppercase">{s.label}</p>
+              <p className="font-heading text-base sm:text-lg md:text-xl font-bold text-gradient-gold">{s.value}</p>
+              <p className="text-[10px] sm:text-xs text-muted-foreground mt-1 tracking-wide uppercase">{s.label}</p>
             </div>
           ))}
-        </div>
-
-        {/* Hieroglyph bottom bar */}
-        <div className="mt-10">
-          <HieroglyphBar />
         </div>
       </div>
     </section>

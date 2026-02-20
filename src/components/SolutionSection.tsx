@@ -24,14 +24,13 @@ const SolutionSection = () => {
           Token holders govern strategies, ensuring alignment and oversight.
         </p>
 
-        {/* Epoch flow — row 1: 3 cols, row 2: 2 cols centered */}
-        <div className="max-w-3xl mx-auto mb-16 space-y-5">
-          {/* Row 1 */}
-          <div className="grid grid-cols-3 gap-5">
+        {/* Epoch flow — responsive grid */}
+        <div className="max-w-3xl mx-auto mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {steps.slice(0, 3).map((s) => (
               <div
                 key={s.label}
-                className="glass-gold rounded-2xl p-6 flex flex-col items-center text-center gap-3 hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 glow-card"
+                className="glass-gold rounded-2xl p-5 flex flex-col items-center text-center gap-3 hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 glow-card"
               >
                 <span className="text-3xl">{s.icon}</span>
                 <span className="font-heading text-xs tracking-widest uppercase text-primary font-semibold">{s.label}</span>
@@ -39,12 +38,11 @@ const SolutionSection = () => {
               </div>
             ))}
           </div>
-          {/* Row 2 — centered */}
-          <div className="grid grid-cols-2 gap-5 max-w-[calc(66.66%-10px)] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 md:max-w-[calc(66.66%-8px)] md:mx-auto">
             {steps.slice(3).map((s) => (
               <div
                 key={s.label}
-                className="glass-gold rounded-2xl p-6 flex flex-col items-center text-center gap-3 hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 glow-card"
+                className="glass-gold rounded-2xl p-5 flex flex-col items-center text-center gap-3 hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 glow-card"
               >
                 <span className="text-3xl">{s.icon}</span>
                 <span className="font-heading text-xs tracking-widest uppercase text-primary font-semibold">{s.label}</span>

@@ -130,7 +130,7 @@ const MascotSection = () => {
                   <img
                     src={m.img}
                     alt={m.alt}
-                    className="relative w-36 h-36 object-contain mx-auto animate-float drop-shadow-lg"
+                    className="relative w-28 h-28 sm:w-36 sm:h-36 object-contain mx-auto animate-float drop-shadow-lg"
                     style={{ animationDelay: m.delay }}
                   />
                 </div>

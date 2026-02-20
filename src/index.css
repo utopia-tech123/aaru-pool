@@ -67,11 +67,22 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
   body {
     @apply bg-background text-foreground font-body;
     background-image:
       radial-gradient(ellipse 80% 50% at 50% -10%, hsl(43 78% 62% / 0.06) 0%, transparent 70%),
       radial-gradient(ellipse 60% 40% at 80% 80%, hsl(162 55% 48% / 0.04) 0%, transparent 60%);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
   }
 
   h1, h2, h3, h4, h5, h6 {

@@ -31,11 +31,11 @@ const TokenomicsSection = () => {
         </p>
 
         {/* Metrics grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto mb-12">
           {metrics.map((m) => (
-            <div key={m.label} className="glass-gold rounded-2xl p-5 text-center glow-card group hover:-translate-y-0.5 transition-transform duration-200">
-              <p className="text-xs text-muted-foreground uppercase tracking-widest mb-2 font-body">{m.label}</p>
-              <p className="font-heading text-xl font-bold text-gradient-gold">{m.value}</p>
+            <div key={m.label} className="glass-gold rounded-2xl p-4 md:p-5 text-center glow-card group hover:-translate-y-0.5 transition-transform duration-200">
+              <p className="text-xs text-muted-foreground uppercase tracking-widest mb-2 font-body leading-tight">{m.label}</p>
+              <p className="font-heading text-lg md:text-xl font-bold text-gradient-gold break-all">{m.value}</p>
               {m.note && <p className="text-xs text-muted-foreground mt-1.5 leading-tight">{m.note}</p>}
             </div>
           ))}
