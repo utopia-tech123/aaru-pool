@@ -24,26 +24,19 @@ const SolutionSection = () => {
           Token holders govern strategies, ensuring alignment and oversight.
         </p>
 
-        {/* Epoch flow */}
-        <div className="max-w-5xl mx-auto mb-16">
-          <div className="flex flex-col sm:flex-row items-stretch gap-0">
+        {/* Epoch flow — 3×2 grid */}
+        <div className="max-w-3xl mx-auto mb-16">
+          <div className="grid grid-cols-3 gap-5">
             {steps.map((s, i) => (
-              <div key={s.label} className="flex sm:flex-col items-center sm:items-stretch flex-1">
-                <div className="glass-gold rounded-2xl p-5 flex-1 flex flex-col items-center text-center gap-3 hover:border-primary/40 transition-all duration-200 group">
-                  <span className="text-3xl">{s.icon}</span>
-                  <span className="font-heading text-xs tracking-widest uppercase text-primary font-semibold">
-                    {s.label}
-                  </span>
-                  <p className="text-xs text-muted-foreground leading-relaxed hidden sm:block">{s.desc}</p>
-                </div>
-                {i < steps.length - 1 && (
-                  <div className="sm:hidden mx-3 w-px h-8 bg-primary/30" />
-                )}
-                {i < steps.length - 1 && (
-                  <div className="hidden sm:flex items-center justify-center w-5 flex-shrink-0 self-center">
-                    <div className="w-full h-px bg-gradient-to-r from-primary/40 to-primary/10" />
-                  </div>
-                )}
+              <div
+                key={s.label}
+                className="glass-gold rounded-2xl p-6 flex flex-col items-center text-center gap-3 hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 glow-card"
+              >
+                <span className="text-3xl">{s.icon}</span>
+                <span className="font-heading text-xs tracking-widest uppercase text-primary font-semibold">
+                  {s.label}
+                </span>
+                <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
