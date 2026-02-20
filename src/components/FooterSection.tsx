@@ -69,7 +69,7 @@ const FooterSection = () => {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/5 relative z-10">
+      <div className="border-t border-border/30 relative z-10">
         <div className="container mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
           <p className="text-xs text-muted-foreground">
             © Aaru Pool 2026. All rights reserved.

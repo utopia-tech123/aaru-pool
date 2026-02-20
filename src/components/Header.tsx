@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { useTheme } from "next-themes";
 import logo from "@/assets/logo.png";
 
 const navLinks = [
@@ -12,9 +13,11 @@ const navLinks = [
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const isDark = theme === "dark";
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5">
+    <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/30">
       <div className="container mx-auto flex items-center justify-between py-4 relative">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 flex-shrink-0 z-10">
@@ -35,8 +38,17 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Right: CTA + mobile toggle */}
-        <div className="flex items-center gap-3">
+        {/* Right: CTA + theme toggle + mobile toggle */}
+        <div className="flex items-center gap-2">
+          {/* Theme toggle */}
+          <button
+            onClick={() => setTheme(isDark ? "light" : "dark")}
+            aria-label="Toggle theme"
+            className="w-9 h-9 rounded-full flex items-center justify-center border border-border/50 bg-muted/40 hover:bg-muted/70 text-muted-foreground hover:text-foreground transition-all duration-200"
+          >
+            {isDark ? <Sun size={15} /> : <Moon size={15} />}
+          </button>
+
           <a
             href="#subscribe"
             className="hidden lg:inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-semibold tracking-widest uppercase bg-primary/10 border border-primary/30 text-primary hover:bg-primary/20 transition-all duration-200"
@@ -55,14 +67,14 @@ const Header = () => {
 
       {/* Mobile nav */}
       {mobileOpen && (
-        <nav className="lg:hidden glass border-t border-white/5 py-5">
+        <nav className="lg:hidden glass border-t border-border/20 py-5">
           <div className="container mx-auto flex flex-col gap-1">
             {navLinks.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-sm font-body text-muted-foreground hover:text-foreground transition-colors py-3 px-2 border-b border-white/5 last:border-0"
+                className="text-sm font-body text-muted-foreground hover:text-foreground transition-colors py-3 px-2 border-b border-border/20 last:border-0"
               >
                 {l.label}
               </a>
@@ -82,3 +94,4 @@ const Header = () => {
 };
 
 export default Header;
+

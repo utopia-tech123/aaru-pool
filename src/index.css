@@ -13,6 +13,7 @@
 @tailwind utilities;
 
 @layer base {
+  /* ── Dark mode (default) ── */
   :root {
     --background: 222 22% 6%;
     --foreground: 0 0% 97%;
@@ -60,6 +61,55 @@
     --sidebar-border: 222 18% 18%;
     --sidebar-ring: 43 78% 62%;
   }
+
+  /* ── Light mode — white + logo green + black ── */
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 150 15% 8%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 150 15% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 15% 8%;
+
+    /* primary = logo gold (kept for accents) */
+    --primary: 43 70% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 150 18% 94%;
+    --secondary-foreground: 150 15% 8%;
+
+    --muted: 150 12% 92%;
+    --muted-foreground: 150 10% 35%;
+
+    /* accent = logo green */
+    --accent: 162 55% 36%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 97%;
+
+    --border: 150 14% 86%;
+    --input: 150 14% 86%;
+    --ring: 162 55% 36%;
+
+    --gold: 43 70% 42%;
+    --gold-light: 43 75% 55%;
+    --gold-dark: 43 60% 30%;
+    --sand: 38 35% 60%;
+    --obsidian: 150 15% 8%;
+    --emerald: 162 55% 36%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 150 15% 8%;
+    --sidebar-primary: 162 55% 36%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 150 12% 92%;
+    --sidebar-accent-foreground: 150 15% 8%;
+    --sidebar-border: 150 14% 86%;
+    --sidebar-ring: 162 55% 36%;
+  }
 }
 
 @layer base {
@@ -85,6 +135,13 @@
     padding-right: env(safe-area-inset-right);
   }
 
+  .light body,
+  body.light {
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, hsl(162 55% 36% / 0.05) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, hsl(43 70% 42% / 0.04) 0%, transparent 60%);
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
   }
@@ -98,9 +155,21 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+  .light .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(43 70% 30%), hsl(43 70% 42%), hsl(43 65% 32%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
   .text-gradient-green {
     background: linear-gradient(135deg, hsl(162 65% 70%), hsl(162 55% 48%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .light .text-gradient-green {
+    background: linear-gradient(135deg, hsl(162 55% 30%), hsl(162 55% 36%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -113,11 +182,24 @@
       hsl(222 22% 6%) 100%
     );
   }
+  .light .bg-gradient-egyptian {
+    background: linear-gradient(180deg,
+      hsl(150 18% 97%) 0%,
+      hsl(150 14% 94%) 50%,
+      hsl(150 18% 97%) 100%
+    );
+  }
 
   .bg-gradient-section {
     background: linear-gradient(180deg,
       hsl(222 22% 6%) 0%,
       hsl(222 18% 9%) 100%
+    );
+  }
+  .light .bg-gradient-section {
+    background: linear-gradient(180deg,
+      hsl(0 0% 100%) 0%,
+      hsl(150 10% 97%) 100%
     );
   }
 
@@ -128,9 +210,19 @@
       linear-gradient(90deg, hsl(43 78% 62% / 0.04) 1px, transparent 1px);
     background-size: 48px 48px;
   }
+  .light .mesh-grid {
+    background-image:
+      linear-gradient(hsl(162 55% 36% / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(162 55% 36% / 0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
 
   .mesh-dot {
     background-image: radial-gradient(circle, hsl(43 78% 62% / 0.12) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .light .mesh-dot {
+    background-image: radial-gradient(circle, hsl(162 55% 36% / 0.10) 1px, transparent 1px);
     background-size: 28px 28px;
   }
 
@@ -145,6 +237,16 @@
       inset 0 1px 0 hsl(0 0% 100% / 0.07),
       inset 0 -1px 0 hsl(0 0% 0% / 0.25);
   }
+  .light .glass {
+    background: linear-gradient(135deg, hsl(0 0% 100% / 0.85), hsl(150 12% 96% / 0.75));
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid hsl(150 14% 80% / 0.6);
+    box-shadow:
+      0 8px 32px hsl(150 15% 8% / 0.08),
+      inset 0 1px 0 hsl(0 0% 100% / 0.9),
+      inset 0 -1px 0 hsl(150 14% 80% / 0.3);
+  }
 
   .glass-gold {
     background: linear-gradient(135deg, hsl(43 40% 14% / 0.65), hsl(222 20% 10% / 0.55));
@@ -156,6 +258,16 @@
       inset 0 1px 0 hsl(43 78% 62% / 0.08),
       inset 0 -1px 0 hsl(0 0% 0% / 0.2);
   }
+  .light .glass-gold {
+    background: linear-gradient(135deg, hsl(0 0% 100% / 0.92), hsl(43 40% 96% / 0.80));
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid hsl(43 70% 42% / 0.22);
+    box-shadow:
+      0 8px 32px hsl(43 40% 20% / 0.10),
+      inset 0 1px 0 hsl(43 70% 90% / 0.8),
+      inset 0 -1px 0 hsl(43 40% 70% / 0.15);
+  }
 
   .glass-gold:hover {
     border-color: hsl(43 78% 62% / 0.32);
@@ -165,6 +277,14 @@
       0 0 20px hsl(43 78% 62% / 0.08),
       inset 0 1px 0 hsl(43 78% 62% / 0.12),
       inset 0 -1px 0 hsl(0 0% 0% / 0.2);
+  }
+  .light .glass-gold:hover {
+    border-color: hsl(43 70% 42% / 0.40);
+    background: linear-gradient(135deg, hsl(0 0% 100% / 0.97), hsl(43 40% 94% / 0.90));
+    box-shadow:
+      0 12px 40px hsl(43 40% 20% / 0.14),
+      0 0 20px hsl(43 70% 42% / 0.06),
+      inset 0 1px 0 hsl(43 70% 90% / 0.9);
   }
 
   .glass-emerald {
@@ -177,6 +297,16 @@
       inset 0 1px 0 hsl(162 55% 48% / 0.08),
       inset 0 -1px 0 hsl(0 0% 0% / 0.2);
   }
+  .light .glass-emerald {
+    background: linear-gradient(135deg, hsl(162 30% 97% / 0.92), hsl(162 25% 94% / 0.80));
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid hsl(162 55% 36% / 0.22);
+    box-shadow:
+      0 8px 32px hsl(162 30% 10% / 0.10),
+      inset 0 1px 0 hsl(162 40% 95% / 0.9),
+      inset 0 -1px 0 hsl(162 30% 70% / 0.15);
+  }
 
   .glass-emerald:hover {
     border-color: hsl(162 55% 48% / 0.35);
@@ -186,6 +316,14 @@
       0 0 20px hsl(162 55% 48% / 0.08),
       inset 0 1px 0 hsl(162 55% 48% / 0.12),
       inset 0 -1px 0 hsl(0 0% 0% / 0.2);
+  }
+  .light .glass-emerald:hover {
+    border-color: hsl(162 55% 36% / 0.40);
+    background: linear-gradient(135deg, hsl(162 30% 98% / 0.97), hsl(162 25% 94% / 0.90));
+    box-shadow:
+      0 12px 40px hsl(162 30% 10% / 0.14),
+      0 0 20px hsl(162 55% 36% / 0.06),
+      inset 0 1px 0 hsl(162 40% 95% / 0.9);
   }
 
   /* ── Glows ── */
@@ -237,6 +375,11 @@
     background: hsl(43 78% 62% / 0.1);
     border: 1px solid hsl(43 78% 62% / 0.3);
     color: hsl(43 85% 75%);
+  }
+  .light .badge-pill {
+    background: hsl(43 70% 42% / 0.08);
+    border: 1px solid hsl(43 70% 42% / 0.28);
+    color: hsl(43 70% 30%);
   }
 
   /* ── Animations ── */
