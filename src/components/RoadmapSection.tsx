@@ -77,7 +77,7 @@ const statusConfig = {
 
 const RoadmapSection = () => {
   return (
-    <section id="roadmap" className="py-20 relative overflow-hidden dark" style={{ background: "hsl(158 40% 12%)" }}>
+    <section id="roadmap" className="py-14 relative overflow-hidden dark" style={{ background: "hsl(158 40% 12%)" }}>
       <div className="absolute inset-0 mesh-grid opacity-20 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/5 blur-[100px] rounded-full pointer-events-none" />
       <div className="absolute top-0 right-0 w-60 h-60 bg-primary/5 blur-[80px] rounded-full pointer-events-none" />
