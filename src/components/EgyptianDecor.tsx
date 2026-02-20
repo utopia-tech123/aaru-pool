@@ -179,69 +179,173 @@ export const NileRipple = ({ className = "" }: { className?: string }) => (
 );
 
 /* ── Light-mode section decorations ───────────────────────────────── */
+/* Large, visible, animated Egyptian artwork — light mode only         */
+
+/* Floating Ankh */
+const FloatingAnkh = ({ style }: { style?: React.CSSProperties }) => (
+  <svg viewBox="0 0 80 110" fill="none" xmlns="http://www.w3.org/2000/svg"
+    className="absolute pointer-events-none select-none animate-float"
+    style={{ willChange: "transform", ...style }} aria-hidden>
+    {/* shaft */}
+    <line x1="40" y1="52" x2="40" y2="100" stroke="hsl(43 70% 45%)" strokeWidth="5" strokeLinecap="round"/>
+    {/* crossbar */}
+    <line x1="14" y1="62" x2="66" y2="62" stroke="hsl(43 70% 45%)" strokeWidth="5" strokeLinecap="round"/>
+    {/* loop */}
+    <ellipse cx="40" cy="34" rx="18" ry="22" stroke="hsl(43 70% 45%)" strokeWidth="5" fill="hsl(43 78% 62% / 0.12)"/>
+    {/* inner loop accent */}
+    <ellipse cx="40" cy="34" rx="10" ry="13" stroke="hsl(43 78% 62%)" strokeWidth="1.5" fill="none" opacity="0.5"/>
+  </svg>
+);
+
+/* Floating Eye of Horus */
+const FloatingEye = ({ style }: { style?: React.CSSProperties }) => (
+  <svg viewBox="0 0 140 80" fill="none" xmlns="http://www.w3.org/2000/svg"
+    className="absolute pointer-events-none select-none animate-float"
+    style={{ willChange: "transform", ...style }} aria-hidden>
+    {/* outer eye shape */}
+    <path d="M8 40 C35 8 105 8 132 40 C105 72 35 72 8 40Z"
+      stroke="hsl(162 55% 38%)" strokeWidth="3" fill="hsl(162 50% 40% / 0.08)"/>
+    {/* iris */}
+    <circle cx="70" cy="40" r="18" stroke="hsl(162 55% 38%)" strokeWidth="3" fill="hsl(162 45% 45% / 0.14)"/>
+    {/* pupil */}
+    <circle cx="70" cy="40" r="9" fill="hsl(162 55% 35% / 0.30)"/>
+    {/* tear mark top */}
+    <path d="M70 10 C65 4 60 2 55 5" stroke="hsl(162 55% 38%)" strokeWidth="2" strokeLinecap="round" fill="none"/>
+    {/* lower kohl lines */}
+    <path d="M70 58 C62 70 50 76 36 76" stroke="hsl(162 55% 38%)" strokeWidth="2.5" strokeLinecap="round"/>
+    <path d="M70 58 C78 68 88 73 104 74" stroke="hsl(162 55% 38%)" strokeWidth="2.5" strokeLinecap="round"/>
+    <path d="M36 76 C34 72 36 68 40 67" stroke="hsl(162 55% 38%)" strokeWidth="1.5" strokeLinecap="round"/>
+  </svg>
+);
+
+/* Floating Lotus (detailed) */
+const FloatingLotusArt = ({ style, color = "gold" }: { style?: React.CSSProperties; color?: "gold" | "emerald" }) => {
+  const c = color === "gold" ? "hsl(43 72% 48%)" : "hsl(162 55% 38%)";
+  const f = color === "gold" ? "hsl(43 78% 62% / 0.15)" : "hsl(162 55% 40% / 0.12)";
+  return (
+    <svg viewBox="0 0 90 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+      className="absolute pointer-events-none select-none animate-float"
+      style={{ willChange: "transform", ...style }} aria-hidden>
+      {/* stem */}
+      <path d="M45 95 C45 95 45 68 45 58" stroke={c} strokeWidth="2.5" strokeLinecap="round"/>
+      {/* left leaf */}
+      <path d="M45 75 C32 68 22 72 16 80" stroke={c} strokeWidth="2" strokeLinecap="round" fill="none"/>
+      {/* right leaf */}
+      <path d="M45 75 C58 68 68 72 74 80" stroke={c} strokeWidth="2" strokeLinecap="round" fill="none"/>
+      {/* outer petals */}
+      <path d="M45 58 C32 46 26 28 34 14 C38 8 45 14 45 14" stroke={c} strokeWidth="2.5" fill={f}/>
+      <path d="M45 58 C58 46 64 28 56 14 C52 8 45 14 45 14" stroke={c} strokeWidth="2.5" fill={f}/>
+      {/* middle petals */}
+      <path d="M45 58 C22 42 20 18 32 6 C38 0 45 8 45 8" stroke={c} strokeWidth="2" fill={f}/>
+      <path d="M45 58 C68 42 70 18 58 6 C52 0 45 8 45 8" stroke={c} strokeWidth="2" fill={f}/>
+      {/* center petal */}
+      <path d="M45 58 C35 40 35 20 45 8 C55 20 55 40 45 58Z" stroke={c} strokeWidth="2.5"
+        fill={color === "gold" ? "hsl(43 65% 52% / 0.25)" : "hsl(162 55% 42% / 0.22)"}/>
+      {/* stamen */}
+      <circle cx="45" cy="18" r="4" fill={c} opacity="0.7"/>
+    </svg>
+  );
+};
+
+/* Floating Pyramid */
+const FloatingPyramid = ({ style }: { style?: React.CSSProperties }) => (
+  <svg viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg"
+    className="absolute pointer-events-none select-none animate-float"
+    style={{ willChange: "transform", animationDelay: "1.5s", ...style }} aria-hidden>
+    {/* main triangle */}
+    <polygon points="60,6 110,84 10,84"
+      stroke="hsl(43 70% 45%)" strokeWidth="3"
+      fill="hsl(43 78% 62% / 0.10)"/>
+    {/* inner lines for depth */}
+    <line x1="60" y1="6" x2="60" y2="84" stroke="hsl(43 70% 45%)" strokeWidth="1.5" opacity="0.4"/>
+    <line x1="60" y1="30" x2="98" y2="84" stroke="hsl(43 70% 45%)" strokeWidth="1" opacity="0.3"/>
+    <line x1="60" y1="30" x2="22" y2="84" stroke="hsl(43 70% 45%)" strokeWidth="1" opacity="0.3"/>
+    {/* capstone eye */}
+    <circle cx="60" cy="18" r="5" fill="hsl(43 78% 62%)" opacity="0.5"/>
+    <circle cx="60" cy="18" r="2.5" fill="hsl(43 78% 62%)" opacity="0.8"/>
+    {/* base line */}
+    <line x1="4" y1="84" x2="116" y2="84" stroke="hsl(43 70% 45%)" strokeWidth="2" opacity="0.6"/>
+  </svg>
+);
+
+/* Floating Scarab */
+const FloatingScarab = ({ style }: { style?: React.CSSProperties }) => (
+  <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"
+    className="absolute pointer-events-none select-none animate-float"
+    style={{ willChange: "transform", animationDelay: "2.8s", ...style }} aria-hidden>
+    {/* body */}
+    <ellipse cx="40" cy="46" rx="18" ry="22" stroke="hsl(162 55% 38%)" strokeWidth="2.5" fill="hsl(162 45% 42% / 0.12)"/>
+    {/* head */}
+    <ellipse cx="40" cy="24" rx="10" ry="8" stroke="hsl(162 55% 38%)" strokeWidth="2.5" fill="hsl(162 45% 42% / 0.12)"/>
+    {/* wings spread */}
+    <path d="M22 44 C10 36 4 24 10 16 C16 10 22 18 22 18" stroke="hsl(162 55% 38%)" strokeWidth="2" fill="hsl(162 40% 45% / 0.10)"/>
+    <path d="M58 44 C70 36 76 24 70 16 C64 10 58 18 58 18" stroke="hsl(162 55% 38%)" strokeWidth="2" fill="hsl(162 40% 45% / 0.10)"/>
+    {/* wing detail lines */}
+    <path d="M22 38 C12 32 8 22 12 16" stroke="hsl(162 55% 38%)" strokeWidth="1" opacity="0.5"/>
+    <path d="M58 38 C68 32 72 22 68 16" stroke="hsl(162 55% 38%)" strokeWidth="1" opacity="0.5"/>
+    {/* body segments */}
+    <line x1="28" y1="40" x2="52" y2="40" stroke="hsl(162 55% 38%)" strokeWidth="1" opacity="0.5"/>
+    <line x1="26" y1="52" x2="54" y2="52" stroke="hsl(162 55% 38%)" strokeWidth="1" opacity="0.5"/>
+    {/* antennae */}
+    <path d="M34 17 C28 10 24 6 20 4" stroke="hsl(162 55% 38%)" strokeWidth="1.5" strokeLinecap="round"/>
+    <path d="M46 17 C52 10 56 6 60 4" stroke="hsl(162 55% 38%)" strokeWidth="1.5" strokeLinecap="round"/>
+  </svg>
+);
+
+/* Hieroglyph side column */
+const HieroglyphColumn = ({ side, glyphs, color }: { side: "left" | "right"; glyphs: string[]; color: string }) => (
+  <div
+    className="absolute top-1/2 -translate-y-1/2 flex flex-col gap-6"
+    style={{ [side]: "12px" }}
+    aria-hidden
+  >
+    {glyphs.map((g, i) => (
+      <span
+        key={i}
+        className="font-['NotoSansEgyptian'] text-2xl animate-float"
+        style={{ color, opacity: 0.35 - i * 0.04, animationDelay: `${i * 0.6}s` }}
+      >{g}</span>
+    ))}
+  </div>
+);
+
 export const LightSectionDecor = () => (
   <div className="absolute inset-0 pointer-events-none select-none overflow-hidden light-section-decor" aria-hidden>
 
-    {/* Top-left corner — lotus stem */}
-    <svg className="absolute -top-4 -left-4 w-52 h-52 opacity-[0.10]" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M30 180 C30 180 30 80 80 40" stroke="hsl(43 70% 45%)" strokeWidth="2" strokeLinecap="round"/>
-      <path d="M80 40 C80 40 50 20 40 5" stroke="hsl(43 70% 45%)" strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M80 40 C80 40 95 15 100 0" stroke="hsl(43 70% 45%)" strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M80 40 C80 40 110 28 120 18" stroke="hsl(43 70% 45%)" strokeWidth="1.5" strokeLinecap="round"/>
-      <circle cx="80" cy="40" r="5" fill="hsl(43 78% 55% / 0.6)"/>
-      <path d="M30 110 C50 105 65 115 60 130" stroke="hsl(162 55% 40%)" strokeWidth="1" strokeLinecap="round" fill="none"/>
-      <rect x="0" y="0" width="40" height="2" fill="hsl(43 70% 45%)"/>
-      <rect x="0" y="0" width="2" height="40" fill="hsl(43 70% 45%)"/>
-      <rect x="5" y="5" width="24" height="1.5" fill="hsl(43 70% 45%)"/>
-      <rect x="5" y="5" width="1.5" height="24" fill="hsl(43 70% 45%)"/>
-    </svg>
+    {/* LEFT: Large Ankh */}
+    <FloatingAnkh style={{ left: "2%", top: "15%", width: 72, height: 100, opacity: 0.32, animationDelay: "0s" }} />
 
-    {/* Top-right corner — ankh */}
-    <svg className="absolute -top-4 -right-4 w-48 h-48 opacity-[0.09]" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <line x1="100" y1="80" x2="100" y2="175" stroke="hsl(43 70% 45%)" strokeWidth="2.5" strokeLinecap="round"/>
-      <line x1="65" y1="110" x2="135" y2="110" stroke="hsl(43 70% 45%)" strokeWidth="2.5" strokeLinecap="round"/>
-      <ellipse cx="100" cy="70" rx="22" ry="28" stroke="hsl(43 70% 45%)" strokeWidth="2.5"/>
-      <rect x="160" y="0" width="40" height="2" fill="hsl(43 70% 45%)"/>
-      <rect x="198" y="0" width="2" height="40" fill="hsl(43 70% 45%)"/>
-      <rect x="172" y="5" width="24" height="1.5" fill="hsl(43 70% 45%)"/>
-      <rect x="194" y="5" width="1.5" height="24" fill="hsl(43 70% 45%)"/>
-    </svg>
+    {/* LEFT: Lotus below ankh */}
+    <FloatingLotusArt color="emerald" style={{ left: "1%", bottom: "10%", width: 70, height: 80, opacity: 0.28, animationDelay: "1.2s" }} />
 
-    {/* Bottom-left — Eye of Horus */}
-    <svg className="absolute bottom-4 left-4 w-44 h-28 opacity-[0.09]" viewBox="0 0 180 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10 45 C40 10 140 10 170 45 C140 80 40 80 10 45Z" stroke="hsl(162 55% 40%)" strokeWidth="2" fill="hsl(162 40% 50% / 0.06)"/>
-      <circle cx="90" cy="45" r="16" stroke="hsl(162 55% 40%)" strokeWidth="2"/>
-      <circle cx="90" cy="45" r="7" fill="hsl(162 55% 40% / 0.25)"/>
-      <path d="M90 61 C85 75 75 85 60 88" stroke="hsl(162 55% 40%)" strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M90 61 C95 72 100 80 120 85" stroke="hsl(162 55% 40%)" strokeWidth="1.5" strokeLinecap="round"/>
-    </svg>
+    {/* RIGHT: Eye of Horus */}
+    <FloatingEye style={{ right: "2%", top: "18%", width: 120, height: 70, opacity: 0.28, animationDelay: "0.8s" }} />
 
-    {/* Bottom-right — geometric hexagon pattern */}
-    <svg className="absolute bottom-4 right-4 w-36 h-36 opacity-[0.08]" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="80,20 140,60 140,120 80,160 20,120 20,60" stroke="hsl(43 70% 45%)" strokeWidth="1.5"/>
-      <polygon points="80,40 120,65 120,115 80,140 40,115 40,65" stroke="hsl(162 55% 40%)" strokeWidth="1"/>
-      <circle cx="80" cy="90" r="8" fill="hsl(43 78% 55% / 0.20)" stroke="hsl(43 70% 45%)" strokeWidth="1"/>
-    </svg>
+    {/* RIGHT: Scarab below eye */}
+    <FloatingScarab style={{ right: "2%", bottom: "12%", width: 68, height: 68, opacity: 0.26, animationDelay: "2s" }} />
 
-    {/* Left column hieroglyphs */}
-    <div className="absolute left-3 top-1/2 -translate-y-1/2 flex flex-col gap-5 opacity-[0.13]">
-      {["𓂀","𓆣","𓇳","𓂋","𓁹"].map((g, i) => (
-        <span key={i} className="font-['NotoSansEgyptian'] text-xl" style={{ color: "hsl(43 70% 45%)" }}>{g}</span>
-      ))}
+    {/* CENTER-LEFT: floating lotus gold */}
+    <FloatingLotusArt color="gold" style={{ left: "10%", top: "8%", width: 52, height: 60, opacity: 0.22, animationDelay: "2.4s" }} />
+
+    {/* CENTER-RIGHT: pyramid */}
+    <FloatingPyramid style={{ right: "10%", bottom: "8%", width: 100, height: 76, opacity: 0.22 }} />
+
+    {/* Hieroglyph columns on sides */}
+    <HieroglyphColumn side="left" glyphs={["𓂀","𓆣","𓇳","𓂋","𓁹"]} color="hsl(43 70% 42%)" />
+    <HieroglyphColumn side="right" glyphs={["𓏏","𓃭","𓆑","𓅓","𓇯"]} color="hsl(162 55% 36%)" />
+
+    {/* Top center divider */}
+    <div className="absolute top-5 left-1/2 -translate-x-1/2 flex items-center gap-4 opacity-25">
+      <div className="w-32 h-px" style={{ background: "linear-gradient(to right, transparent, hsl(43 70% 45%))" }}/>
+      <span className="font-['NotoSansEgyptian'] text-lg" style={{ color: "hsl(43 70% 45%)" }}>𓆣</span>
+      <div className="w-32 h-px" style={{ background: "linear-gradient(to left, transparent, hsl(43 70% 45%))" }}/>
     </div>
 
-    {/* Right column hieroglyphs */}
-    <div className="absolute right-3 top-1/2 -translate-y-1/2 flex flex-col gap-5 opacity-[0.13]">
-      {["𓏏","𓃭","𓆑","𓅓","𓇯"].map((g, i) => (
-        <span key={i} className="font-['NotoSansEgyptian'] text-xl" style={{ color: "hsl(162 55% 40%)" }}>{g}</span>
-      ))}
-    </div>
-
-    {/* Center top divider with scarab */}
-    <div className="absolute top-4 left-1/2 -translate-x-1/2 flex items-center gap-3 opacity-[0.15]">
-      <div className="w-20 h-px" style={{ background: "linear-gradient(to right, transparent, hsl(43 70% 45%))" }}/>
-      <span className="font-['NotoSansEgyptian'] text-base" style={{ color: "hsl(43 70% 45%)" }}>𓆣</span>
-      <div className="w-20 h-px" style={{ background: "linear-gradient(to left, transparent, hsl(43 70% 45%))" }}/>
+    {/* Bottom center divider */}
+    <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-4 opacity-25">
+      <div className="w-32 h-px" style={{ background: "linear-gradient(to right, transparent, hsl(162 55% 36%))" }}/>
+      <span className="font-['NotoSansEgyptian'] text-lg" style={{ color: "hsl(162 55% 36%)" }}>𓇳</span>
+      <div className="w-32 h-px" style={{ background: "linear-gradient(to left, transparent, hsl(162 55% 36%))" }}/>
     </div>
   </div>
 );
