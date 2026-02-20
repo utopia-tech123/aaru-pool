@@ -192,7 +192,12 @@
   }
   /* Make text tokens resolve correctly inside white sections */
   .light .bg-gradient-egyptian .text-foreground { color: hsl(158 40% 8%); }
-  .light .bg-gradient-egyptian .text-muted-foreground { color: hsl(158 18% 38%); }
+  .light .bg-gradient-egyptian .text-muted-foreground { color: hsl(158 18% 35%); }
+  /* Card text on tinted cards should stay dark */
+  .light .bg-gradient-egyptian .glass-gold .text-foreground,
+  .light .bg-gradient-egyptian .glass-emerald .text-foreground { color: hsl(158 40% 10%); }
+  .light .bg-gradient-egyptian .glass-gold .text-muted-foreground,
+  .light .bg-gradient-egyptian .glass-emerald .text-muted-foreground { color: hsl(158 20% 32%); }
   .light .bg-gradient-egyptian .text-gradient-gold {
     background: linear-gradient(135deg, hsl(43 70% 28%), hsl(43 72% 40%), hsl(43 65% 30%));
     -webkit-background-clip: text;
@@ -297,12 +302,13 @@
   }
   /* White section override for gold cards */
   .light .bg-gradient-egyptian .glass-gold {
-    background: linear-gradient(135deg, hsl(0 0% 100% / 0.95), hsl(43 50% 97% / 0.90));
-    border: 1px solid hsl(43 78% 62% / 0.28);
+    background: linear-gradient(135deg, hsl(43 60% 96% / 0.98), hsl(43 70% 90% / 0.95));
+    border: 1px solid hsl(43 78% 62% / 0.45);
     box-shadow:
-      0 8px 32px hsl(43 40% 20% / 0.10),
-      inset 0 1px 0 hsl(43 80% 95%),
-      inset 0 -1px 0 hsl(43 50% 75% / 0.15);
+      0 4px 24px hsl(43 50% 40% / 0.14),
+      0 1px 4px hsl(43 70% 50% / 0.10),
+      inset 0 1px 0 hsl(43 80% 98%),
+      inset 0 -1px 0 hsl(43 50% 75% / 0.20);
   }
 
   .glass-gold:hover {
@@ -352,12 +358,13 @@
       inset 0 -1px 0 hsl(158 40% 4% / 0.2);
   }
   .light .bg-gradient-egyptian .glass-emerald {
-    background: linear-gradient(135deg, hsl(162 25% 97% / 0.95), hsl(162 20% 94% / 0.90));
-    border: 1px solid hsl(162 60% 44% / 0.30);
+    background: linear-gradient(135deg, hsl(162 50% 94% / 0.98), hsl(162 45% 88% / 0.95));
+    border: 1px solid hsl(162 60% 44% / 0.45);
     box-shadow:
-      0 8px 32px hsl(162 30% 10% / 0.10),
-      inset 0 1px 0 hsl(162 40% 95%),
-      inset 0 -1px 0 hsl(162 30% 70% / 0.15);
+      0 4px 24px hsl(162 40% 30% / 0.14),
+      0 1px 4px hsl(162 55% 44% / 0.10),
+      inset 0 1px 0 hsl(162 40% 97%),
+      inset 0 -1px 0 hsl(162 30% 70% / 0.20);
   }
 
   .glass-emerald:hover {
@@ -448,9 +455,9 @@
   }
   /* On white sections */
   .light .bg-gradient-egyptian .badge-pill {
-    background: hsl(43 70% 42% / 0.10);
-    border: 1px solid hsl(43 70% 42% / 0.30);
-    color: hsl(43 65% 32%);
+    background: hsl(43 70% 42% / 0.12);
+    border: 1px solid hsl(43 70% 42% / 0.35);
+    color: hsl(43 60% 30%);
   }
 
   /* ── Animations ── */

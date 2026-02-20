@@ -38,7 +38,7 @@ const MascotSection = () => {
     <section className="relative overflow-hidden">
       <NileWave variant="emerald" />
 
-      <div className="py-16 relative">
+      <div className="py-16 relative dark" style={{ background: "hsl(158 40% 12%)" }}>
         <div className="absolute inset-0 mesh-dot opacity-10 pointer-events-none" />
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/5 blur-[150px] rounded-full pointer-events-none" />
         <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-accent/5 blur-[120px] rounded-full pointer-events-none" />
