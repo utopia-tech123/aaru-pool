@@ -167,7 +167,6 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     padding-bottom: 0.15em;
-    display: inline-block;
   }
 
   .text-gradient-green {
@@ -176,7 +175,6 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     padding-bottom: 0.15em;
-    display: inline-block;
   }
 
   .bg-gradient-egyptian {
