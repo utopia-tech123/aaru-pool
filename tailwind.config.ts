@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["Cinzel", "serif"],
+        heading: ["NotoSansEgyptian", "Cinzel", "serif"],
         body: ["Raleway", "sans-serif"],
       },
       colors: {
