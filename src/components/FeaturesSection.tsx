@@ -25,7 +25,7 @@ const FeaturesSection = () => {
         <div className="flex justify-center mb-5">
           <span className="badge-pill">Key Features</span>
         </div>
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-4 text-gradient-gold">
+        <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-4 pb-2 text-gradient-gold">
           Built for the Next Era of DeFi
         </h2>
         <p className="text-center text-muted-foreground mb-10 max-w-xl mx-auto text-sm">

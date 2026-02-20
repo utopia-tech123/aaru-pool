@@ -78,7 +78,7 @@ const HeroSection = () => {
           The Field of Eternal Yield | DAO Governed | AI Powered
         </p>
 
-        <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
+        <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold mb-6 pb-2 leading-tight tracking-tight">
           <span className="text-gradient-gold">Rise with the Chosen.</span>
           <br />
           <span className="text-foreground">Own the Protocol.</span>

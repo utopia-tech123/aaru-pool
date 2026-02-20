@@ -24,7 +24,7 @@ const SolutionSection = () => {
         <div className="flex justify-center mb-5">
           <span className="badge-pill">The Solution</span>
         </div>
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-4 text-gradient-gold">
+        <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-4 pb-2 text-gradient-gold">
           Epoch-Based AI Governance Model
         </h2>
         <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto text-sm leading-relaxed">
@@ -51,7 +51,7 @@ const SolutionSection = () => {
         {/* Core Pillars */}
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
-            <h3 className="font-heading text-2xl font-bold text-gradient-gold mb-3">Core Protocol Pillars</h3>
+            <h3 className="font-heading text-2xl font-bold text-gradient-gold pb-2 mb-3">Core Protocol Pillars</h3>
             <p className="text-sm text-muted-foreground max-w-lg mx-auto">
               Two foundational principles that make Aaru Pool the most trustworthy yield protocol in DeFi.
             </p>
