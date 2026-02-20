@@ -1,4 +1,4 @@
-import { FloatingLotusCluster, NileRipple } from "@/components/EgyptianDecor";
+import { FloatingLotusCluster, NileRipple, LightSectionDecor } from "@/components/EgyptianDecor";
 
 const metrics = [
   { label: "Token Symbol", value: "$AARU" },
@@ -20,6 +20,7 @@ const TokenomicsSection = () => {
     <section id="tokenomics" className="py-14 bg-gradient-egyptian relative overflow-hidden">
       <div className="absolute inset-0 mesh-dot opacity-15 pointer-events-none" />
       <div className="absolute top-0 right-0 w-80 h-80 bg-primary/6 blur-[100px] rounded-full pointer-events-none" />
+      <LightSectionDecor />
       <FloatingLotusCluster lotuses={[
         { top: "10%",  left: "2%",  size: 34, delay: "0.8s", color: "gold",    opacity: 0.25 },
         { bottom: "8%", right: "2%", size: 30, delay: "2.3s", color: "emerald", opacity: 0.22 },

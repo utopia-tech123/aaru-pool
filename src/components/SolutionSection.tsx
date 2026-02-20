@@ -1,4 +1,4 @@
-import { FloatingLotusCluster, HieroglyphStrip, NileRipple } from "@/components/EgyptianDecor";
+import { FloatingLotusCluster, HieroglyphStrip, NileRipple, LightSectionDecor } from "@/components/EgyptianDecor";
 
 const steps = [
   { label: "Proposal",   icon: "𓁿", desc: "AI agents submit investment theses" },
@@ -14,6 +14,7 @@ const SolutionSection = () => {
 
       <div className="absolute inset-0 mesh-dot opacity-20 pointer-events-none" />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-40 bg-primary/6 blur-[100px] pointer-events-none" />
+      <LightSectionDecor />
       <FloatingLotusCluster lotuses={[
         { top: "12%",  right: "3%",   size: 40, delay: "0.5s", color: "emerald", opacity: 0.28 },
         { bottom: "12%", left: "3%",  size: 32, delay: "2.8s", color: "gold",    opacity: 0.25 },

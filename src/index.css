@@ -236,6 +236,10 @@
   /* ── Hide NileWave dividers in light mode ── */
   .light .nile-wave { display: none; }
 
+  /* ── Light section decor: hidden in dark, visible in light ── */
+  .light-section-decor { display: none; }
+  .light .light-section-decor { display: block; }
+
   /* ── Mesh / grid backgrounds ── */
   .mesh-grid {
     background-image:
