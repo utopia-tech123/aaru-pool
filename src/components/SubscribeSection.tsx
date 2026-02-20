@@ -12,7 +12,7 @@ const SubscribeSection = () => {
   };
 
   return (
-    <section id="subscribe" className="py-20 relative overflow-hidden">
+    <section id="subscribe" className="py-20 relative overflow-hidden bg-gradient-egyptian">
       <div className="absolute inset-0 mesh-grid opacity-20 pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/8 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[150px] bg-accent/6 blur-[80px] rounded-full pointer-events-none" />
