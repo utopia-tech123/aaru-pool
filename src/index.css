@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Raleway:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 15% 6%;
+    --foreground: 40 30% 88%;
+
+    --card: 30 12% 10%;
+    --card-foreground: 40 30% 88%;
+
+    --popover: 30 12% 10%;
+    --popover-foreground: 40 30% 88%;
+
+    --primary: 43 75% 55%;
+    --primary-foreground: 30 15% 6%;
+
+    --secondary: 30 12% 14%;
+    --secondary-foreground: 40 30% 88%;
+
+    --muted: 30 10% 16%;
+    --muted-foreground: 40 15% 55%;
+
+    --accent: 120 100% 50%;
+    --accent-foreground: 30 15% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 20% 18%;
+    --input: 40 20% 18%;
+    --ring: 43 75% 55%;
+
+    --radius: 0.5rem;
+
+    --gold: 43 75% 55%;
+    --gold-light: 43 80% 70%;
+    --gold-dark: 43 60% 35%;
+    --sand: 38 40% 75%;
+    --obsidian: 30 15% 6%;
+    --neon-green: 120 100% 50%;
+
+    --sidebar-background: 30 15% 6%;
+    --sidebar-foreground: 40 30% 88%;
+    --sidebar-primary: 43 75% 55%;
+    --sidebar-primary-foreground: 30 15% 6%;
+    --sidebar-accent: 30 12% 14%;
+    --sidebar-accent-foreground: 40 30% 88%;
+    --sidebar-border: 40 20% 18%;
+    --sidebar-ring: 43 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(43 80% 70%), hsl(43 75% 55%), hsl(43 60% 35%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-green {
+    background: linear-gradient(135deg, hsl(120 100% 50%), hsl(120 80% 40%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-egyptian {
+    background: linear-gradient(180deg, hsl(30 15% 6%) 0%, hsl(30 12% 10%) 50%, hsl(30 15% 6%) 100%);
+  }
+
+  .border-gold {
+    border-color: hsl(43 75% 55% / 0.3);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px hsl(120 100% 50% / 0.3), 0 0 60px hsl(120 100% 50% / 0.1);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 20px hsl(43 75% 55% / 0.3), 0 0 60px hsl(43 75% 55% / 0.1);
+  }
+
+  .hieroglyph-border {
+    border-image: repeating-linear-gradient(
+      90deg,
+      hsl(43 75% 55% / 0.4) 0px,
+      hsl(43 75% 55% / 0.4) 4px,
+      transparent 4px,
+      transparent 12px
+    ) 1;
+  }
+}
