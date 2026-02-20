@@ -31,7 +31,7 @@ const SubscribeSection = () => {
           />
           <button
             type="submit"
-            className="bg-accent text-accent-foreground font-heading font-semibold text-xs tracking-widest uppercase px-6 py-3 rounded-sm glow-green hover:opacity-90 transition-opacity"
+            className="bg-accent text-accent-foreground font-heading font-semibold text-xs tracking-widest uppercase px-6 py-3 rounded-sm glow-green hover:opacity-90 transition-opacity border border-accent/30"
           >
             Subscribe
           </button>

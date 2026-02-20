@@ -58,7 +58,7 @@ export default {
         },
         sand: "hsl(var(--sand))",
         obsidian: "hsl(var(--obsidian))",
-        "neon-green": "hsl(var(--neon-green))",
+        emerald: "hsl(var(--emerald))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
