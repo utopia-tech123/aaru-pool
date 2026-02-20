@@ -20,9 +20,9 @@ const SubscribeSection = () => {
       ]} />
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Card — forced dark/green in both modes */}
-        <div className="max-w-xl mx-auto dark rounded-3xl">
-          <div className="glass-gold rounded-3xl p-10 text-center relative overflow-hidden" style={{ background: "linear-gradient(135deg, hsl(158 38% 18% / 0.95), hsl(162 40% 14% / 0.90))" }}>
+        {/* Card — forced dark/green in both modes, exact same green as Guardians/Roadmap */}
+        <div className="max-w-xl mx-auto dark rounded-3xl text-white" style={{ colorScheme: "dark" }}>
+          <div className="rounded-3xl p-10 text-center relative overflow-hidden border border-[hsl(43_78%_62%_/_0.18)]" style={{ background: "hsl(158 40% 12%)" }}>
             {/* Top accent line */}
             <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
             <div className="flex justify-center mb-6">
@@ -31,7 +31,7 @@ const SubscribeSection = () => {
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 text-gradient-gold">
               Stay Ahead of the Curve
             </h2>
-            <p className="text-muted-foreground mb-8 text-sm leading-relaxed">
+            <p className="mb-8 text-sm leading-relaxed" style={{ color: "hsl(0 0% 82%)" }}>
               Be first to know about Aaru Pool's launch, token sale, and governance updates.
             </p>
 
@@ -52,7 +52,7 @@ const SubscribeSection = () => {
               </button>
             </form>
 
-            <p className="text-xs text-muted-foreground mt-4 opacity-70">
+            <p className="text-xs mt-4 opacity-60" style={{ color: "hsl(0 0% 90%)" }}>
               No spam. Unsubscribe anytime.
             </p>
           </div>
