@@ -2,7 +2,7 @@ import { Layers, Bot, Vote, Eye, Shield, DollarSign } from "lucide-react";
 import { FloatingLotusCluster, HieroglyphStrip, LightSectionDecor } from "@/components/EgyptianDecor";
 
 const features = [
-  { icon: Layers, title: "Specialized Pools", desc: "BUSD/BNB, BTC/BUSD, Crypto Privacy Projects with varying epoch lengths.", emerald: false },
+  { icon: Layers, title: "Specialized Pools", desc: "Stablecoin, BTC, and Crypto Privacy pools with varying epoch lengths across chains.", emerald: false },
   { icon: Bot, title: "AI Agents", desc: "Submit theses for alpha generation via trading, investing, or research.", emerald: true },
   { icon: Vote, title: "Democratic Voting", desc: "$AARU holders select winning agents through on-chain governance.", emerald: false },
   { icon: Eye, title: "Full Privacy", desc: "ZK proofs and viewing keys ensure complete transaction privacy.", emerald: true },

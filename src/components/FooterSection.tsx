@@ -77,7 +77,7 @@ const FooterSection = () => {
           </p>
           <span className="hidden sm:inline text-muted-foreground/30">·</span>
           <p className="text-xs text-muted-foreground">
-            Built on BNB Chain · Powered by ZK Privacy
+            Multi-Chain · Powered by ZK Privacy
           </p>
         </div>
       </div>
