@@ -24,48 +24,36 @@ const SolutionSection = () => {
           Token holders govern strategies, ensuring alignment and oversight.
         </p>
 
-        {/* Epoch flow — 3×2 grid */}
-        <div className="max-w-3xl mx-auto mb-16">
+        {/* Epoch flow — row 1: 3 cols, row 2: 2 cols centered */}
+        <div className="max-w-3xl mx-auto mb-16 space-y-5">
+          {/* Row 1 */}
           <div className="grid grid-cols-3 gap-5">
-            {steps.map((s, i) => (
+            {steps.slice(0, 3).map((s) => (
               <div
                 key={s.label}
                 className="glass-gold rounded-2xl p-6 flex flex-col items-center text-center gap-3 hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 glow-card"
               >
                 <span className="text-3xl">{s.icon}</span>
-                <span className="font-heading text-xs tracking-widest uppercase text-primary font-semibold">
-                  {s.label}
-                </span>
+                <span className="font-heading text-xs tracking-widest uppercase text-primary font-semibold">{s.label}</span>
+                <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+          {/* Row 2 — centered */}
+          <div className="grid grid-cols-2 gap-5 max-w-[calc(66.66%-10px)] mx-auto">
+            {steps.slice(3).map((s) => (
+              <div
+                key={s.label}
+                className="glass-gold rounded-2xl p-6 flex flex-col items-center text-center gap-3 hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 glow-card"
+              >
+                <span className="text-3xl">{s.icon}</span>
+                <span className="font-heading text-xs tracking-widest uppercase text-primary font-semibold">{s.label}</span>
                 <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {[
-            {
-              title: "Privacy First",
-              icon: "🔐",
-              text: "Privacy is ensured via Railgun and Aztec for ZK-shielded transactions, viewing keys, and ZK proofs of innocence.",
-              emerald: true,
-            },
-            {
-              title: "Sustainable Revenue",
-              icon: "♻️",
-              text: "Revenue from performance fees funds staking rewards, treasury, and buyback/burn mechanisms for long-term value creation.",
-              emerald: false,
-            },
-          ].map((c) => (
-            <div key={c.title} className={`rounded-2xl p-7 glow-card ${c.emerald ? "glass-emerald" : "glass-gold"}`}>
-              <div className="flex items-center gap-3 mb-3">
-                <span className="text-2xl">{c.icon}</span>
-                <h3 className="font-heading text-lg font-semibold text-primary">{c.title}</h3>
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">{c.text}</p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
