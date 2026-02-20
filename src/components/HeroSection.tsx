@@ -1,6 +1,14 @@
 import heroBg from "@/assets/hero-bg.jpg";
 import avatar from "@/assets/avatar.jpeg";
 
+const HieroglyphBar = () => (
+  <div className="flex items-center justify-center gap-1 opacity-30 select-none pointer-events-none" aria-hidden>
+    {["𓂀","𓆣","𓇳","𓂋","𓁹","𓆙","𓏏","𓃭","𓆑","𓅓","𓇯","𓂝","𓆗","𓃠","𓇼","𓂀"].map((g, i) => (
+      <span key={i} className="font-['NotoSansEgyptian'] text-primary text-lg md:text-xl">{g}</span>
+    ))}
+  </div>
+);
+
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -10,61 +18,107 @@ const HeroSection = () => {
         style={{ backgroundImage: `url(${heroBg})` }}
       />
       {/* Dark overlay + gradient */}
-      <div className="absolute inset-0 bg-background/75" />
+      <div className="absolute inset-0 bg-background/80" />
       <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background" />
 
       {/* Glow orbs */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/8 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/3 right-1/4 w-[300px] h-[300px] rounded-full bg-accent/6 blur-[90px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/10 blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-1/3 right-1/4 w-[350px] h-[350px] rounded-full bg-accent/8 blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 w-[200px] h-[200px] rounded-full bg-primary/6 blur-[80px] pointer-events-none" />
 
       {/* Mesh grid overlay */}
-      <div className="absolute inset-0 mesh-grid opacity-40 pointer-events-none" />
+      <div className="absolute inset-0 mesh-grid opacity-30 pointer-events-none" />
+
+      {/* Egyptian corner ornaments */}
+      <div className="absolute top-24 left-6 md:left-12 opacity-15 pointer-events-none select-none" aria-hidden>
+        <div className="font-['NotoSansEgyptian'] text-primary text-5xl md:text-7xl leading-none">𓇳</div>
+        <div className="font-['NotoSansEgyptian'] text-primary text-3xl md:text-5xl leading-none mt-1 ml-2">𓂀</div>
+      </div>
+      <div className="absolute top-24 right-6 md:right-12 opacity-15 pointer-events-none select-none text-right" aria-hidden>
+        <div className="font-['NotoSansEgyptian'] text-primary text-5xl md:text-7xl leading-none">𓆣</div>
+        <div className="font-['NotoSansEgyptian'] text-primary text-3xl md:text-5xl leading-none mt-1 mr-2">𓁹</div>
+      </div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto text-center px-4 pt-28 pb-20">
+
+        {/* Hieroglyph top bar */}
+        <div className="mb-6">
+          <HieroglyphBar />
+        </div>
+
         {/* Badge */}
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-6">
           <span className="badge-pill">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse-glow inline-block" />
             Decentralized DeX Fund · BNB Chain
           </span>
         </div>
 
-        {/* Avatar */}
-        <img
-          src={avatar}
-          alt="Aaru Pool"
-          className="mx-auto w-28 h-28 md:w-36 md:h-36 rounded-full border-2 border-primary/40 glow-gold mb-8 object-cover animate-float"
-        />
+        {/* Avatar with Egyptian ring */}
+        <div className="flex justify-center mb-8">
+          <div className="relative">
+            {/* Rotating outer ring */}
+            <div className="absolute -inset-3 rounded-full border border-primary/20 animate-spin-slow" />
+            <div className="absolute -inset-5 rounded-full border border-primary/10 animate-spin-slow" style={{ animationDirection: "reverse", animationDuration: "30s" }} />
+            {/* Glyph dots on ring */}
+            <div className="absolute -top-6 left-1/2 -translate-x-1/2 font-['NotoSansEgyptian'] text-primary text-xs opacity-50">𓇳</div>
+            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 font-['NotoSansEgyptian'] text-primary text-xs opacity-50">𓂀</div>
+            <img
+              src={avatar}
+              alt="Aaru Pool"
+              className="w-28 h-28 md:w-36 md:h-36 rounded-full border-2 border-primary/50 glow-gold object-cover animate-float"
+            />
+          </div>
+        </div>
 
-        <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
-          <span className="text-gradient-gold">Unlock High-Yield DeFi</span>
-          <br />
-          <span className="text-foreground">with Privacy, Control &amp; Governance</span>
-        </h1>
-
-        <p className="max-w-2xl mx-auto text-base md:text-lg text-muted-foreground mb-10 font-light leading-relaxed">
-          Aaru Pool is a decentralized, non-custodial protocol providing access to high-yield DeFi
-          strategies through AI agents, epoch-based pools, and robust risk management.
+        {/* Eyebrow */}
+        <p className="font-heading text-xs md:text-sm tracking-[0.3em] uppercase text-primary/70 mb-4">
+          The Field of Eternal Yield — DAO Governed · AI Powered
         </p>
 
+        <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
+          <span className="text-gradient-gold">Rise with the Chosen.</span>
+          <br />
+          <span className="text-foreground">Own the Protocol.</span>
+          <br />
+          <span className="text-gradient-green">Govern the Vault.</span>
+        </h1>
+
+        <p className="max-w-2xl mx-auto text-base md:text-lg text-muted-foreground mb-4 font-light leading-relaxed">
+          Aaru Pool is a decentralized, non-custodial DeFi protocol powered by AI agents and epoch-based
+          pools. Early members shape governance and unlock exclusive high-yield vaults — before the gates open to all.
+        </p>
+
+        {/* DAO urgency line */}
+        <p className="max-w-xl mx-auto text-sm text-primary/80 mb-10 font-semibold tracking-wide">
+          ⚡ Genesis DAO seats are limited — secure yours before the first epoch begins.
+        </p>
+
+        {/* CTA buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#subscribe"
-            className="inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold text-sm tracking-widest uppercase px-8 py-4 rounded-full glow-green hover:opacity-90 transition-all duration-200"
+            className="inline-flex items-center justify-center gap-2 bg-accent text-white font-bold text-sm tracking-widest uppercase px-10 py-4 rounded-full glow-green hover:opacity-90 transition-all duration-200 shadow-lg"
           >
-            Subscribe for Updates
+            <span>𓂀</span>
+            Join the DAO — Get Early Access
           </a>
           <a
             href="#features"
             className="inline-flex items-center justify-center gap-2 glass-gold text-primary font-semibold text-sm tracking-widest uppercase px-8 py-4 rounded-full hover:bg-primary/15 transition-all duration-200"
           >
-            Explore Features
+            Explore the Vault
           </a>
         </div>
 
+        {/* Trust micro-copy */}
+        <p className="mt-4 text-xs text-muted-foreground opacity-60 tracking-wide">
+          Non-custodial · ZK-private · DAO governed · Audited smart contracts
+        </p>
+
         {/* Stats bar */}
-        <div className="mt-16 mx-auto max-w-2xl glass-gold rounded-2xl px-6 py-5 grid grid-cols-3 gap-4 relative overflow-hidden">
+        <div className="mt-14 mx-auto max-w-2xl glass-gold rounded-2xl px-6 py-5 grid grid-cols-3 gap-4 relative overflow-hidden">
           <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
           {[
             { label: "Total Supply", value: "1B $AARU" },
@@ -78,11 +132,14 @@ const HeroSection = () => {
           ))}
         </div>
 
-        {/* Decorative line */}
-        <div className="mt-12 mx-auto w-32 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+        {/* Hieroglyph bottom bar */}
+        <div className="mt-10">
+          <HieroglyphBar />
+        </div>
       </div>
     </section>
   );
 };
 
 export default HeroSection;
+
