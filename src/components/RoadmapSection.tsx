@@ -86,7 +86,7 @@ const RoadmapSection = () => {
         <div className="flex justify-center mb-5">
           <span className="badge-pill">Roadmap</span>
         </div>
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-3 text-gradient-gold">
+        <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-3 pb-2 text-gradient-gold">
           Path to the Future
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-xl mx-auto text-sm">

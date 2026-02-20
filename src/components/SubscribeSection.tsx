@@ -23,7 +23,7 @@ const SubscribeSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section heading */}
         <div className="text-center mb-8">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-gradient-gold mb-2">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-gradient-gold pb-2 mb-2">
             Join the Movement
           </h2>
           <p className="text-muted-foreground text-sm max-w-md mx-auto">
@@ -37,7 +37,7 @@ const SubscribeSection = () => {
             <div className="flex justify-center mb-6">
               <span className="badge-pill">Early Access</span>
             </div>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 text-gradient-gold">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 pb-2 text-gradient-gold">
               Stay Ahead of the Curve
             </h2>
             <p className="mb-8 text-sm leading-relaxed" style={{ color: "hsl(0 0% 82%)" }}>
