@@ -33,7 +33,7 @@ const HeroSection = () => {
 
         <a
           href="#subscribe"
-          className="inline-block bg-accent text-accent-foreground font-heading font-semibold text-sm tracking-widest uppercase px-8 py-4 rounded-sm glow-green hover:opacity-90 transition-opacity border border-accent/40"
+          className="inline-block bg-accent font-heading font-semibold text-sm tracking-widest uppercase px-8 py-4 rounded-sm glow-green hover:opacity-90 transition-opacity border border-accent/40 text-white"
         >
           Subscribe for Updates
         </a>
