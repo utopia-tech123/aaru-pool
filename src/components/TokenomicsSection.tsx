@@ -17,7 +17,7 @@ const allocations = [
 
 const TokenomicsSection = () => {
   return (
-    <section id="tokenomics" className="py-20 bg-gradient-egyptian relative overflow-hidden">
+    <section id="tokenomics" className="py-14 bg-gradient-egyptian relative overflow-hidden">
       <div className="absolute inset-0 mesh-dot opacity-15 pointer-events-none" />
       <div className="absolute top-0 right-0 w-80 h-80 bg-primary/6 blur-[100px] rounded-full pointer-events-none" />
       <FloatingLotusCluster lotuses={[

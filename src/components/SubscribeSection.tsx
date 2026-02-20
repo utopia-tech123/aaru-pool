@@ -12,7 +12,7 @@ const SubscribeSection = () => {
   };
 
   return (
-    <section id="subscribe" className="py-20 relative overflow-hidden bg-gradient-egyptian">
+    <section id="subscribe" className="py-14 relative overflow-hidden bg-gradient-egyptian">
       <div className="absolute inset-0 mesh-grid opacity-20 pointer-events-none" />
       <FloatingLotusCluster lotuses={[
         { top: "10%",  left: "4%",  size: 38, delay: "0s",   color: "gold",    opacity: 0.30 },

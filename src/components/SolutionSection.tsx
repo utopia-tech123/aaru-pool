@@ -10,7 +10,7 @@ const steps = [
 
 const SolutionSection = () => {
   return (
-    <section id="solution" className="py-20 bg-gradient-egyptian relative overflow-hidden">
+    <section id="solution" className="py-14 bg-gradient-egyptian relative overflow-hidden">
 
       <div className="absolute inset-0 mesh-dot opacity-20 pointer-events-none" />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-40 bg-primary/6 blur-[100px] pointer-events-none" />

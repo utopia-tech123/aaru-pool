@@ -30,7 +30,7 @@ const problems = [
 
 const ProblemSection = () => {
   return (
-    <section id="problem" className="py-20 relative overflow-hidden bg-gradient-egyptian">
+    <section id="problem" className="py-14 relative overflow-hidden bg-gradient-egyptian">
       <div className="absolute inset-0 mesh-grid opacity-30 pointer-events-none" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-destructive/8 blur-[80px] pointer-events-none" />
       <FloatingLotusCluster lotuses={[
