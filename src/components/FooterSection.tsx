@@ -13,10 +13,10 @@ const FooterSection = () => {
 
           {/* Brand column */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
+            <a href="#" className="flex items-center gap-3 mb-4 hover:opacity-80 transition-opacity">
               <img src={logo} alt="Aaru Pool" className="w-9 h-9 rounded-full ring-1 ring-primary/30 glow-gold" />
               <span className="font-heading text-lg font-bold text-gradient-gold">Aaru Pool</span>
-            </div>
+            </a>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
               Aaru Pool puts yield first — combining AI-driven strategies, on-chain governance, and ZK-shielded privacy in one decentralized fund protocol.
             </p>
