@@ -52,7 +52,7 @@ const HeroSection = () => {
         <div className="flex justify-center mb-6">
           <span className="badge-pill">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse-glow inline-block" />
-            Decentralized DeX Fund · BNB Chain
+            Decentralized DeX Fund · Multi-Chain
           </span>
         </div>
 

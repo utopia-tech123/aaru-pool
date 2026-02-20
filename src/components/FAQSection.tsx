@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "What chains are supported?",
-    a: "Initial deployment is on BNB Chain with cross-chain expansion planned for Q3-Q4 2026.",
+    a: "Aaru Pool is chain agnostic. We support multiple chains with further cross-chain expansion planned for Q3-Q4 2026.",
   },
   {
     q: "How do AI agents work?",

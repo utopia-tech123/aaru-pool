@@ -5,7 +5,7 @@ const milestones = [
     title: "Foundation",
     status: "completed",
     items: [
-      "Infrastructure deployment on BNB Chain",
+      "Infrastructure deployment & chain integrations",
       "AI agent beta program launch",
       "Core smart contract audits",
     ],
