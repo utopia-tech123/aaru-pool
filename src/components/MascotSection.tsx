@@ -1,6 +1,7 @@
 import mascotWave from "@/assets/mascot-wave.png";
 import mascotLotus from "@/assets/mascot-lotus.png";
 import mascotCoin from "@/assets/mascot-coin.png";
+import { NileWave, FloatingLotusCluster, HieroglyphStrip, NileRipple } from "@/components/EgyptianDecor";
 
 const mascots = [
   {
@@ -32,73 +33,24 @@ const mascots = [
   },
 ];
 
-const NileWave = ({ flip = false }: { flip?: boolean }) => (
-  <div
-    className={`w-full overflow-hidden leading-none pointer-events-none ${flip ? "rotate-180" : ""}`}
-    style={{ height: "64px" }}
-    aria-hidden
-  >
-    <svg
-      viewBox="0 0 1440 64"
-      xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="none"
-      className="w-full h-full"
-    >
-      <path
-        d="M0,32 C120,52 240,12 360,32 C480,52 600,12 720,32 C840,52 960,12 1080,32 C1200,52 1320,12 1440,32 L1440,64 L0,64 Z"
-        fill="hsl(43 78% 62% / 0.06)"
-      />
-      <path
-        d="M0,42 C180,22 360,58 540,42 C720,26 900,58 1080,42 C1260,26 1350,52 1440,42 L1440,64 L0,64 Z"
-        fill="hsl(162 55% 48% / 0.04)"
-      />
-    </svg>
-  </div>
-);
-
-interface LotusProps {
-  className?: string;
-  style?: React.CSSProperties;
-}
-
-const Lotus = ({ className, style }: LotusProps) => (
-  <svg
-    viewBox="0 0 48 48"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-    style={style}
-    aria-hidden
-  >
-    <ellipse cx="24" cy="38" rx="10" ry="4" fill="hsl(162 55% 48% / 0.15)" />
-    <path d="M24 34 C24 34 14 24 16 14 C18 6 24 10 24 10" stroke="hsl(43 78% 62% / 0.5)" strokeWidth="1.5" fill="hsl(43 40% 20% / 0.3)" />
-    <path d="M24 34 C24 34 34 24 32 14 C30 6 24 10 24 10" stroke="hsl(43 78% 62% / 0.5)" strokeWidth="1.5" fill="hsl(43 40% 20% / 0.3)" />
-    <path d="M24 34 C24 34 18 20 24 10 C30 20 24 34 24 34Z" stroke="hsl(43 78% 62% / 0.6)" strokeWidth="1.5" fill="hsl(43 55% 30% / 0.4)" />
-    <circle cx="24" cy="10" r="3" fill="hsl(43 85% 75% / 0.7)" />
-  </svg>
-);
-
 const MascotSection = () => {
   return (
     <section className="relative overflow-hidden">
-      <NileWave />
+      <NileWave variant="emerald" />
 
       <div className="py-16 relative">
         <div className="absolute inset-0 mesh-dot opacity-10 pointer-events-none" />
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/5 blur-[150px] rounded-full pointer-events-none" />
         <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-accent/5 blur-[120px] rounded-full pointer-events-none" />
 
-        {/* Floating lotus ornaments */}
-        <Lotus className="absolute top-12 left-6 md:left-20 w-12 h-12 animate-float opacity-60" />
-        <Lotus className="absolute top-20 right-8 md:right-24 w-8 h-8 animate-float opacity-40" style={{ animationDelay: "2s" }} />
-        <Lotus className="absolute bottom-10 left-1/3 w-10 h-10 animate-float opacity-30" style={{ animationDelay: "4s" }} />
+        <FloatingLotusCluster lotuses={[
+          { top: "10%",  left: "3%",   size: 44, delay: "0s",   color: "gold",    opacity: 0.40 },
+          { top: "18%",  right: "4%",  size: 32, delay: "1.8s", color: "emerald", opacity: 0.32 },
+          { bottom: "12%", left: "6%", size: 36, delay: "3.2s", color: "gold",    opacity: 0.28 },
+          { bottom: "18%", right: "5%",size: 28, delay: "2.5s", color: "emerald", opacity: 0.22 },
+        ]} />
 
-        {/* Hieroglyph strip top */}
-        <div className="flex items-center justify-center gap-6 mb-10 opacity-20 select-none pointer-events-none" aria-hidden>
-          {["𓂀","𓆣","𓇳","𓂋","𓁹","𓆙","𓏏","𓃭","𓆑"].map((g, i) => (
-            <span key={i} className="font-['NotoSansEgyptian'] text-primary text-base md:text-lg">{g}</span>
-          ))}
-        </div>
+        <HieroglyphStrip className="mb-10" opacity={18} />
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex justify-center mb-5">
@@ -141,32 +93,13 @@ const MascotSection = () => {
             ))}
           </div>
 
-          {/* Nile water ripple strip */}
-          <div className="mt-14 mx-auto max-w-3xl relative h-12 overflow-hidden" aria-hidden>
-            <svg viewBox="0 0 800 48" preserveAspectRatio="none" className="w-full h-full opacity-30">
-              {[0, 8, 16].map((offset, i) => (
-                <path
-                  key={i}
-                  d={`M0,${24 + offset} C100,${8 + offset} 200,${38 + offset} 300,${24 + offset} C400,${10 + offset} 500,${38 + offset} 600,${24 + offset} C700,${10 + offset} 750,${34 + offset} 800,${24 + offset}`}
-                  stroke={i === 1 ? "hsl(162 55% 48%)" : "hsl(43 78% 62%)"}
-                  strokeWidth="1"
-                  fill="none"
-                  strokeDasharray="6 4"
-                />
-              ))}
-            </svg>
-          </div>
+          <NileRipple className="mt-12 opacity-50" />
         </div>
 
-        {/* Hieroglyph strip bottom */}
-        <div className="flex items-center justify-center gap-6 mt-10 opacity-20 select-none pointer-events-none" aria-hidden>
-          {["𓅓","𓇯","𓂝","𓆗","𓃠","𓇼","𓂀","𓆣","𓇳"].map((g, i) => (
-            <span key={i} className="font-['NotoSansEgyptian'] text-primary text-base md:text-lg">{g}</span>
-          ))}
-        </div>
+        <HieroglyphStrip className="mt-10" opacity={15} />
       </div>
 
-      <NileWave flip />
+      <NileWave variant="gold" flip />
     </section>
   );
 };
