@@ -30,19 +30,10 @@ const SolutionSection = () => {
           Token holders govern strategies, ensuring alignment and oversight.
         </p>
 
-        {/* Epoch flow */}
+        {/* Epoch flow — single unified responsive grid */}
         <div className="max-w-3xl mx-auto mb-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {steps.slice(0, 3).map((s) => (
-              <div key={s.label} className="glass-gold rounded-2xl p-5 flex flex-col items-center text-center gap-3 hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 glow-card">
-                <span className="text-3xl">{s.icon}</span>
-                <span className="font-heading text-xs tracking-widest uppercase text-primary font-semibold">{s.label}</span>
-                <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 md:max-w-[calc(66.66%-8px)] md:mx-auto">
-            {steps.slice(3).map((s) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {steps.map((s) => (
               <div key={s.label} className="glass-gold rounded-2xl p-5 flex flex-col items-center text-center gap-3 hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 glow-card">
                 <span className="text-3xl">{s.icon}</span>
                 <span className="font-heading text-xs tracking-widest uppercase text-primary font-semibold">{s.label}</span>
