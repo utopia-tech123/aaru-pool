@@ -15,7 +15,7 @@ const allocations = [
 
 const TokenomicsSection = () => {
   return (
-    <section id="tokenomics" className="py-28 bg-gradient-egyptian relative overflow-hidden">
+    <section id="tokenomics" className="py-20 bg-gradient-egyptian relative overflow-hidden">
       <div className="absolute inset-0 mesh-dot opacity-15 pointer-events-none" />
       <div className="absolute top-0 right-0 w-80 h-80 bg-primary/6 blur-[100px] rounded-full pointer-events-none" />
 
@@ -26,7 +26,7 @@ const TokenomicsSection = () => {
         <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-4 text-gradient-gold">
           $AARU Token Economics
         </h2>
-        <p className="text-center text-muted-foreground mb-14 max-w-xl mx-auto text-sm">
+        <p className="text-center text-muted-foreground mb-10 max-w-xl mx-auto text-sm">
           Fixed supply, deflationary mechanics, and aligned incentives for long-term holders.
         </p>
 

@@ -8,7 +8,7 @@ const steps = [
 
 const SolutionSection = () => {
   return (
-    <section id="solution" className="py-28 bg-gradient-egyptian relative overflow-hidden">
+    <section id="solution" className="py-20 bg-gradient-egyptian relative overflow-hidden">
       <div className="absolute inset-0 mesh-dot opacity-20 pointer-events-none" />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-40 bg-primary/6 blur-[100px] pointer-events-none" />
 
@@ -19,7 +19,7 @@ const SolutionSection = () => {
         <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-4 text-gradient-gold">
           Epoch-Based AI Governance Model
         </h2>
-        <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto text-sm leading-relaxed">
+        <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto text-sm leading-relaxed">
           Aaru Pool leverages AI agents competing for capital in structured cycles.
           Token holders govern strategies, ensuring alignment and oversight.
         </p>

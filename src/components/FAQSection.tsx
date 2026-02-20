@@ -26,7 +26,7 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="py-28 bg-gradient-egyptian relative overflow-hidden">
+    <section id="faq" className="py-20 bg-gradient-egyptian relative overflow-hidden">
       <div className="absolute inset-0 mesh-dot opacity-15 pointer-events-none" />
 
       <div className="container mx-auto px-4 max-w-2xl relative z-10">
@@ -36,7 +36,7 @@ const FAQSection = () => {
         <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-4 text-gradient-gold">
           Frequently Asked Questions
         </h2>
-        <p className="text-center text-muted-foreground mb-14 text-sm">
+        <p className="text-center text-muted-foreground mb-10 text-sm">
           Everything you need to know about Aaru Pool.
         </p>
 

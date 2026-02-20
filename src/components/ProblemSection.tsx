@@ -29,7 +29,7 @@ const problems = [
 
 const ProblemSection = () => {
   return (
-    <section id="problem" className="py-28 relative overflow-hidden">
+    <section id="problem" className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 mesh-grid opacity-30 pointer-events-none" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-destructive/8 blur-[80px] pointer-events-none" />
 
@@ -43,7 +43,7 @@ const ProblemSection = () => {
         <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-4 text-gradient-gold">
           High-Yield DeFi Remains Inaccessible
         </h2>
-        <p className="text-center text-muted-foreground mb-14 max-w-xl mx-auto text-sm">
+        <p className="text-center text-muted-foreground mb-10 max-w-xl mx-auto text-sm">
           The current DeFi landscape creates systemic barriers that prevent most investors from safely capturing yield.
         </p>
 

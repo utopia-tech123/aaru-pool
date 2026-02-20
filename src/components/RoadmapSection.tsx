@@ -7,7 +7,7 @@ const milestones = [
 
 const RoadmapSection = () => {
   return (
-    <section id="roadmap" className="py-28 relative overflow-hidden">
+    <section id="roadmap" className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 mesh-grid opacity-20 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/5 blur-[100px] rounded-full pointer-events-none" />
 
@@ -18,7 +18,7 @@ const RoadmapSection = () => {
         <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-4 text-gradient-gold">
           Path to the Future
         </h2>
-        <p className="text-center text-muted-foreground mb-16 max-w-xl mx-auto text-sm">
+        <p className="text-center text-muted-foreground mb-12 max-w-xl mx-auto text-sm">
           Structured milestones driving Aaru Pool from launch to institutional-grade DeFi infrastructure.
         </p>
 
