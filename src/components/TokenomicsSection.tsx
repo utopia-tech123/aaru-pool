@@ -37,29 +37,29 @@ const TokenomicsSection = () => {
           Fixed supply, deflationary mechanics, and aligned incentives for long-term holders.
         </p>
 
-        {/* Metrics grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto mb-12">
+        {/* Metrics grid — 2 cols on mobile, 3 on sm, 4 on lg */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 max-w-4xl mx-auto mb-10">
           {metrics.map((m) => (
-            <div key={m.label} className="glass-gold rounded-2xl p-4 md:p-5 text-center glow-card group hover:-translate-y-0.5 transition-transform duration-200">
-              <p className="text-xs text-muted-foreground uppercase tracking-widest mb-2 font-body leading-tight">{m.label}</p>
-              <p className="font-heading text-lg md:text-xl font-bold text-gradient-gold break-all">{m.value}</p>
-              {m.note && <p className="text-xs text-muted-foreground mt-1.5 leading-tight">{m.note}</p>}
+            <div key={m.label} className="glass-gold rounded-2xl p-3 sm:p-5 text-center glow-card group hover:-translate-y-0.5 transition-transform duration-200">
+              <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-widest mb-1.5 font-body leading-tight">{m.label}</p>
+              <p className="font-heading text-base sm:text-xl font-bold text-gradient-gold break-all leading-tight">{m.value}</p>
+              {m.note && <p className="text-[10px] sm:text-xs text-muted-foreground mt-1 leading-tight">{m.note}</p>}
             </div>
           ))}
         </div>
 
-        {/* Allocation table */}
+        {/* Allocation table — full horizontal scroll on mobile */}
         <div className="max-w-4xl mx-auto glass-gold rounded-2xl overflow-hidden">
-          <div className="px-6 pt-6 pb-2">
-            <h3 className="font-heading text-lg font-semibold text-foreground mb-1">Allocation Schedule</h3>
+          <div className="px-4 sm:px-6 pt-5 pb-2">
+            <h3 className="font-heading text-base sm:text-lg font-semibold text-foreground mb-1">Allocation Schedule</h3>
             <p className="text-xs text-muted-foreground">Cliff and vesting periods in months</p>
           </div>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+          <div className="overflow-x-auto -mx-0">
+            <table className="w-full text-sm min-w-[480px]">
               <thead>
                 <tr className="border-b border-border/30">
                   {["Allocation", "% Total", "Tokens", "TGE Unlock", "Cliff", "Vesting"].map((h) => (
-                    <th key={h} className="text-left py-4 px-6 text-muted-foreground font-body font-medium text-xs uppercase tracking-widest whitespace-nowrap">
+                    <th key={h} className="text-left py-3 px-4 sm:px-6 text-muted-foreground font-body font-medium text-[10px] sm:text-xs uppercase tracking-widest whitespace-nowrap">
                       {h}
                     </th>
                   ))}
@@ -68,12 +68,12 @@ const TokenomicsSection = () => {
               <tbody>
                 {allocations.map((a) => (
                   <tr key={a.name} className="border-b border-border/20 last:border-0 hover:bg-muted/20 transition-colors">
-                    <td className="py-4 px-6 text-foreground font-medium">{a.name}</td>
-                    <td className="py-4 px-6 text-accent font-semibold">{a.pct}</td>
-                    <td className="py-4 px-6 text-foreground">{a.tokens}</td>
-                    <td className="py-4 px-6 text-muted-foreground">{a.tge}</td>
-                    <td className="py-4 px-6 text-foreground">{a.cliff}mo</td>
-                    <td className="py-4 px-6 text-foreground">{a.vest}mo</td>
+                    <td className="py-3 px-4 sm:px-6 text-foreground font-medium text-xs sm:text-sm">{a.name}</td>
+                    <td className="py-3 px-4 sm:px-6 text-accent font-semibold text-xs sm:text-sm">{a.pct}</td>
+                    <td className="py-3 px-4 sm:px-6 text-foreground text-xs sm:text-sm">{a.tokens}</td>
+                    <td className="py-3 px-4 sm:px-6 text-muted-foreground text-xs sm:text-sm">{a.tge}</td>
+                    <td className="py-3 px-4 sm:px-6 text-foreground text-xs sm:text-sm">{a.cliff}mo</td>
+                    <td className="py-3 px-4 sm:px-6 text-foreground text-xs sm:text-sm">{a.vest}mo</td>
                   </tr>
                 ))}
               </tbody>
