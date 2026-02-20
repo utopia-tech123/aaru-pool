@@ -15,14 +15,15 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-gold/20">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/92 backdrop-blur-md border-b border-primary/15">
       <div className="container mx-auto flex items-center justify-between py-4">
-        <a href="#" className="flex items-center gap-3">
+        {/* Logo */}
+        <a href="#" className="flex items-center gap-2 flex-shrink-0">
           <img src={logo} alt="Aaru Pool" className="w-9 h-9 rounded-full" />
         </a>
 
-        {/* Desktop nav */}
-        <nav className="hidden lg:flex gap-6">
+        {/* Desktop nav — absolutely centered */}
+        <nav className="hidden lg:flex gap-7 absolute left-1/2 -translate-x-1/2">
           {navLinks.map((l) => (
             <a
               key={l.href}
@@ -34,14 +35,16 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Mobile toggle */}
-        <button
-          className="lg:hidden text-foreground"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Right spacer (same width as logo for balance) + mobile toggle */}
+        <div className="flex items-center w-9 justify-end">
+          <button
+            className="lg:hidden text-foreground"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile nav */}
