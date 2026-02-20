@@ -233,6 +233,9 @@
     background-clip: text;
   }
 
+  /* ── Hide NileWave dividers in light mode ── */
+  .light .nile-wave { display: none; }
+
   /* ── Mesh / grid backgrounds ── */
   .mesh-grid {
     background-image:

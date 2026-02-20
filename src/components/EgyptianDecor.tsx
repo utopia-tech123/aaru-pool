@@ -23,7 +23,7 @@ export const NileWave = ({ flip = false, variant = "subtle", className = "" }: N
 
   return (
     <div
-      className={`w-full overflow-hidden leading-none pointer-events-none select-none ${flip ? "rotate-180" : ""} ${className}`}
+      className={`nile-wave w-full overflow-hidden leading-none pointer-events-none select-none ${flip ? "rotate-180" : ""} ${className}`}
       style={{ height: 56 }}
       aria-hidden
     >
