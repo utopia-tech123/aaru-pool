@@ -75,7 +75,7 @@ const HeroSection = () => {
 
         {/* Eyebrow */}
         <p className="font-heading text-xs md:text-sm tracking-[0.3em] uppercase text-primary/70 mb-4">
-          The Field of Eternal Yield — DAO Governed · AI Powered
+          The Field of Eternal Yield | DAO Governed | AI Powered
         </p>
 
         <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
@@ -88,12 +88,12 @@ const HeroSection = () => {
 
         <p className="max-w-2xl mx-auto text-base md:text-lg text-muted-foreground mb-4 font-light leading-relaxed">
           Aaru Pool is a decentralized, non-custodial DeFi protocol powered by AI agents and epoch-based
-          pools. Early members shape governance and unlock exclusive high-yield vaults — before the gates open to all.
+          pools. Early members shape governance and unlock exclusive high-yield vaults, before the gates open to all.
         </p>
 
         {/* DAO urgency line */}
         <p className="max-w-xl mx-auto text-sm text-primary/80 mb-10 font-semibold tracking-wide">
-          ⚡ Aaru DAO seats are limited — secure yours before the first epoch begins.
+          ⚡ Aaru DAO seats are limited. Secure yours before the first epoch begins.
         </p>
 
         {/* CTA buttons */}
@@ -103,7 +103,7 @@ const HeroSection = () => {
             className="inline-flex items-center justify-center gap-2 bg-accent text-white font-bold text-sm tracking-widest uppercase px-10 py-4 rounded-full glow-green hover:opacity-90 transition-all duration-200 shadow-lg"
           >
             <span>𓂀</span>
-            Join the DAO — Get Early Access
+            Join the DAO: Get Early Access
           </a>
           <a
             href="#features"

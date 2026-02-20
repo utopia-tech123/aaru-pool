@@ -6,7 +6,7 @@ import { NileWave, FloatingLotusCluster, HieroglyphStrip, NileRipple } from "@/c
 const mascots = [
   {
     img: mascotWave,
-    alt: "Aaru Guardian — Waving",
+    alt: "Aaru Guardian Waving",
     title: "Join the DAO",
     desc: "Every $AARU holder becomes a Guardian of the Vault. Vote on strategies, shape the protocol, and earn your place among the chosen.",
     glyph: "𓂀",
@@ -15,18 +15,18 @@ const mascots = [
   },
   {
     img: mascotLotus,
-    alt: "Aaru Guardian — Lotus",
+    alt: "Aaru Guardian Lotus",
     title: "Harvest the Nile",
-    desc: "AI agents cultivate yield like lotus blooms on the Nile — epoch-based pools that grow in harmony with the market's flow.",
+    desc: "AI agents cultivate yield like lotus blooms on the Nile, epoch-based pools that grow in harmony with the market's flow.",
     glyph: "𓇳",
     glass: "glass-emerald",
     delay: "0.4s",
   },
   {
     img: mascotCoin,
-    alt: "Aaru Guardian — Coin",
+    alt: "Aaru Guardian Coin",
     title: "Claim Your Yield",
-    desc: "Only pay for performance. Our fee structure rewards winners — if the vault doesn't outperform, you keep your share.",
+    desc: "Only pay for performance. Our fee structure rewards winners: if the vault doesn't outperform, you keep your share.",
     glyph: "𓆣",
     glass: "glass-gold",
     delay: "0.8s",
@@ -63,7 +63,7 @@ const MascotSection = () => {
             Three Paths. One Protocol.
           </h2>
           <p className="text-center text-muted-foreground mb-12 max-w-lg mx-auto text-sm leading-relaxed">
-            The Guardians of Aaru embody the three pillars of the protocol — governance, yield, and performance.
+            The Guardians of Aaru embody the three pillars of the protocol: governance, yield, and performance.
           </p>
 
           <div className="grid sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
