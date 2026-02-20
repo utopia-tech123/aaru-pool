@@ -75,7 +75,7 @@ const SolutionSection = () => {
                 icon: "♻️",
                 badge: "Deflationary",
                 bullets: [
-                  "Performance fees only — you pay for positive alpha",
+                  "Performance fees only: you pay for positive alpha",
                   "Staking rewards funded by protocol revenue",
                   "Buyback & burn mechanics reduce circulating supply",
                 ],

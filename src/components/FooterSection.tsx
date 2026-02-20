@@ -18,7 +18,7 @@ const FooterSection = () => {
               <span className="font-heading text-lg font-bold text-gradient-gold">Aaru Pool</span>
             </a>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Aaru Pool puts yield first — combining AI-driven strategies, on-chain governance, and ZK-shielded privacy in one decentralized fund protocol.
+              Aaru Pool puts yield first, combining AI-driven strategies, on-chain governance, and ZK-shielded privacy in one decentralized fund protocol.
             </p>
           </div>
 
