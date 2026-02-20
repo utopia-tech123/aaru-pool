@@ -11,7 +11,7 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="py-28 relative overflow-hidden">
+    <section id="features" className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 mesh-grid opacity-25 pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
 
@@ -22,7 +22,7 @@ const FeaturesSection = () => {
         <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-4 text-gradient-gold">
           Built for the Next Era of DeFi
         </h2>
-        <p className="text-center text-muted-foreground mb-14 max-w-xl mx-auto text-sm">
+        <p className="text-center text-muted-foreground mb-10 max-w-xl mx-auto text-sm">
           Every component of Aaru Pool is engineered for maximum yield, minimum friction, and absolute privacy.
         </p>
 
