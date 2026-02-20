@@ -64,7 +64,8 @@ const HeroSection = () => {
         </div>
 
         {/* Stats bar */}
-        <div className="mt-16 mx-auto max-w-2xl glass rounded-2xl px-6 py-5 grid grid-cols-3 gap-4 border border-white/5">
+        <div className="mt-16 mx-auto max-w-2xl glass-gold rounded-2xl px-6 py-5 grid grid-cols-3 gap-4 relative overflow-hidden">
+          <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
           {[
             { label: "Total Supply", value: "1B $AARU" },
             { label: "Listing Price", value: "$0.05" },
