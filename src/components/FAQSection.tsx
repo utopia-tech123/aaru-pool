@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { FloatingLotusCluster, HieroglyphStrip } from "@/components/EgyptianDecor";
 
 const faqs = [
   {
@@ -28,6 +29,10 @@ const FAQSection = () => {
   return (
     <section id="faq" className="py-20 bg-gradient-egyptian relative overflow-hidden">
       <div className="absolute inset-0 mesh-dot opacity-15 pointer-events-none" />
+      <FloatingLotusCluster lotuses={[
+        { top: "15%", left: "3%",  size: 32, delay: "1.2s", color: "gold",    opacity: 0.22 },
+        { bottom: "10%", right: "3%", size: 28, delay: "3s", color: "emerald", opacity: 0.20 },
+      ]} />
 
       <div className="container mx-auto px-4 max-w-2xl relative z-10">
         <div className="flex justify-center mb-5">
@@ -57,6 +62,7 @@ const FAQSection = () => {
             </AccordionItem>
           ))}
         </Accordion>
+        <HieroglyphStrip className="mt-10" opacity={12} />
       </div>
     </section>
   );

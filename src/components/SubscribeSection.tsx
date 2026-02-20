@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from "sonner";
+import { FloatingLotusCluster, HieroglyphStrip } from "@/components/EgyptianDecor";
 
 const SubscribeSection = () => {
   const [email, setEmail] = useState("");
@@ -13,9 +14,12 @@ const SubscribeSection = () => {
   return (
     <section id="subscribe" className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 mesh-grid opacity-20 pointer-events-none" />
-      {/* Large gold glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/8 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[150px] bg-accent/6 blur-[80px] rounded-full pointer-events-none" />
+      <FloatingLotusCluster lotuses={[
+        { top: "10%",  left: "4%",  size: 38, delay: "0s",   color: "gold",    opacity: 0.30 },
+        { bottom: "10%", right: "4%", size: 32, delay: "1.8s", color: "emerald", opacity: 0.25 },
+      ]} />
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Card */}
@@ -53,6 +57,7 @@ const SubscribeSection = () => {
             No spam. Unsubscribe anytime.
           </p>
         </div>
+        <HieroglyphStrip className="mt-10" opacity={10} />
       </div>
     </section>
   );

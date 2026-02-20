@@ -1,4 +1,5 @@
 import { Layers, Bot, Vote, Eye, Shield, DollarSign } from "lucide-react";
+import { FloatingLotusCluster, HieroglyphStrip } from "@/components/EgyptianDecor";
 
 const features = [
   { icon: Layers, title: "Specialized Pools", desc: "BUSD/BNB, BTC/BUSD, Crypto Privacy Projects with varying epoch lengths.", emerald: false },
@@ -14,6 +15,10 @@ const FeaturesSection = () => {
     <section id="features" className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 mesh-grid opacity-25 pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+      <FloatingLotusCluster lotuses={[
+        { top: "8%",   right: "2%",  size: 36, delay: "1s",   color: "gold",    opacity: 0.28 },
+        { bottom: "8%", left: "2%", size: 32, delay: "3s",   color: "emerald", opacity: 0.22 },
+      ]} />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex justify-center mb-5">
@@ -46,6 +51,7 @@ const FeaturesSection = () => {
             </div>
           ))}
         </div>
+        <HieroglyphStrip className="mt-12" opacity={12} />
       </div>
     </section>
   );

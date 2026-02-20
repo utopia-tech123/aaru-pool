@@ -1,3 +1,5 @@
+import { FloatingLotusCluster, NileRipple } from "@/components/EgyptianDecor";
+
 const metrics = [
   { label: "Token Symbol", value: "$AARU" },
   { label: "Total Supply", value: "1,000,000,000", note: "Fixed · No Inflation" },
@@ -18,6 +20,10 @@ const TokenomicsSection = () => {
     <section id="tokenomics" className="py-20 bg-gradient-egyptian relative overflow-hidden">
       <div className="absolute inset-0 mesh-dot opacity-15 pointer-events-none" />
       <div className="absolute top-0 right-0 w-80 h-80 bg-primary/6 blur-[100px] rounded-full pointer-events-none" />
+      <FloatingLotusCluster lotuses={[
+        { top: "10%",  left: "2%",  size: 34, delay: "0.8s", color: "gold",    opacity: 0.25 },
+        { bottom: "8%", right: "2%", size: 30, delay: "2.3s", color: "emerald", opacity: 0.22 },
+      ]} />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex justify-center mb-5">
@@ -74,7 +80,8 @@ const TokenomicsSection = () => {
           </div>
         </div>
 
-        <p className="text-center text-muted-foreground mt-8 text-xs max-w-xl mx-auto leading-relaxed">
+        <NileRipple className="mt-10 mb-4 opacity-50" />
+        <p className="text-center text-muted-foreground mt-2 text-xs max-w-xl mx-auto leading-relaxed">
           veAARU staking boosts voting power and yields. Deflationary buyback and burn from revenue.
         </p>
       </div>
