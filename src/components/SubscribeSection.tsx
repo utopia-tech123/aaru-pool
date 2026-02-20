@@ -42,7 +42,8 @@ const SubscribeSection = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email address"
-                className="flex-1 glass border border-border/40 rounded-full px-5 py-3.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors bg-background/40"
+              className="flex-1 glass border border-border/40 rounded-full px-5 py-3.5 text-sm focus:outline-none focus:border-primary/50 transition-colors bg-background/40"
+              style={{ color: "hsl(0 0% 90%)" }}
               />
               <button
                 type="submit"
