@@ -1,38 +1,81 @@
 import logo from "@/assets/logo.png";
+import { Send, Twitter, MessageCircle } from "lucide-react";
 
 const FooterSection = () => {
   return (
-    <footer className="relative border-t border-white/5 py-14 overflow-hidden">
+    <footer className="relative border-t border-white/5 overflow-hidden">
       <div className="absolute inset-0 mesh-dot opacity-10 pointer-events-none" />
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col items-center gap-6">
-          {/* Logo */}
-          <img src={logo} alt="Aaru Pool" className="w-10 h-10 rounded-full ring-1 ring-primary/30 glow-gold" />
+      {/* Main footer content */}
+      <div className="container mx-auto px-4 py-14 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
 
-          {/* Links */}
-          <div className="flex gap-8">
-            {[
-              { href: "https://x.com/aarupool", label: "X (Twitter)" },
-              { href: "https://discord.gg/aarupool", label: "Discord" },
-              { href: "https://t.me/aarupool", label: "Telegram" },
-            ].map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors tracking-wide"
-              >
-                {l.label}
-              </a>
-            ))}
+          {/* Brand column */}
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-3 mb-4">
+              <img src={logo} alt="Aaru Pool" className="w-9 h-9 rounded-full ring-1 ring-primary/30 glow-gold" />
+              <span className="font-heading text-lg font-bold text-gradient-gold">Aaru Pool</span>
+            </div>
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+              Aaru Pool puts yield first — combining AI-driven strategies, on-chain governance, and ZK-shielded privacy in one decentralized fund protocol.
+            </p>
           </div>
 
-          <div className="w-32 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+          {/* Follow column */}
+          <div>
+            <h4 className="font-heading text-sm font-semibold text-foreground mb-5 tracking-wide">Follow Aaru Pool</h4>
+            <ul className="space-y-3">
+              {[
+                { icon: Send, label: "Telegram", href: "https://t.me/aarupool" },
+                { icon: Twitter, label: "X (Twitter)", href: "https://x.com/aarupool" },
+                { icon: MessageCircle, label: "Discord", href: "https://discord.gg/aarupool" },
+              ].map(({ icon: Icon, label, href }) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-primary transition-colors group"
+                  >
+                    <Icon size={15} className="group-hover:text-primary transition-colors flex-shrink-0" />
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          <p className="text-xs text-muted-foreground tracking-wide">
-            © 2026 Aaru Pool · All rights reserved
+          {/* Legal column */}
+          <div>
+            <h4 className="font-heading text-sm font-semibold text-foreground mb-5 tracking-wide">Legal</h4>
+            <ul className="space-y-3">
+              {[
+                { label: "Privacy Policy", href: "#" },
+                { label: "Terms of Service", href: "#" },
+                { label: "Risk Disclaimer", href: "#" },
+              ].map(({ label, href }) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div className="border-t border-white/5 relative z-10">
+        <div className="container mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="text-xs text-muted-foreground">
+            © Aaru Pool 2026. All rights reserved.
+          </p>
+          <p className="text-xs text-muted-foreground">
+            Built on BNB Chain · Powered by ZK Privacy
           </p>
         </div>
       </div>
