@@ -45,8 +45,9 @@ const FAQSection = () => {
             <AccordionItem
               key={i}
               value={`item-${i}`}
-              className="glass-gold rounded-2xl px-6 overflow-hidden border-0 glow-card"
+              className="glass-gold rounded-2xl px-6 overflow-hidden border-0 relative"
             >
+              <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
               <AccordionTrigger className="text-sm font-body font-semibold text-foreground hover:text-primary hover:no-underline py-5">
                 {f.q}
               </AccordionTrigger>

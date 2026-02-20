@@ -42,7 +42,7 @@ const TokenomicsSection = () => {
         </div>
 
         {/* Allocation table */}
-        <div className="max-w-4xl mx-auto glass rounded-2xl overflow-hidden border border-white/5">
+        <div className="max-w-4xl mx-auto glass-gold rounded-2xl overflow-hidden">
           <div className="px-6 pt-6 pb-2">
             <h3 className="font-heading text-lg font-semibold text-foreground mb-1">Allocation Schedule</h3>
             <p className="text-xs text-muted-foreground">Cliff and vesting periods in months</p>

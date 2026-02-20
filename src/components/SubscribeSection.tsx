@@ -19,7 +19,9 @@ const SubscribeSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Card */}
-        <div className="max-w-xl mx-auto glass rounded-3xl p-10 border border-primary/15 glow-card text-center">
+        <div className="max-w-xl mx-auto glass-gold rounded-3xl p-10 text-center relative overflow-hidden">
+          {/* Top accent line */}
+          <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
           <div className="flex justify-center mb-6">
             <span className="badge-pill">Early Access</span>
           </div>
