@@ -92,7 +92,7 @@ const HeroSection = () => {
 
         {/* DAO urgency line */}
         <p className="max-w-xl mx-auto text-sm text-primary/80 mb-10 font-semibold tracking-wide">
-          ⚡ Genesis DAO seats are limited — secure yours before the first epoch begins.
+          ⚡ Aaru DAO seats are limited — secure yours before the first epoch begins.
         </p>
 
         {/* CTA buttons */}
