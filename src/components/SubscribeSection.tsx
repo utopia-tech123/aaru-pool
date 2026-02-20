@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { toast } from "sonner";
-import { FloatingLotusCluster, HieroglyphStrip } from "@/components/EgyptianDecor";
+import { FloatingLotusCluster, HieroglyphStrip, LightSectionDecor } from "@/components/EgyptianDecor";
 
 const SubscribeSection = () => {
   const [email, setEmail] = useState("");
@@ -14,13 +14,22 @@ const SubscribeSection = () => {
   return (
     <section id="subscribe" className="py-14 relative overflow-hidden bg-gradient-egyptian">
       <div className="absolute inset-0 mesh-grid opacity-20 pointer-events-none" />
+      <LightSectionDecor />
       <FloatingLotusCluster lotuses={[
         { top: "10%",  left: "4%",  size: 38, delay: "0s",   color: "gold",    opacity: 0.30 },
         { bottom: "10%", right: "4%", size: 32, delay: "1.8s", color: "emerald", opacity: 0.25 },
       ]} />
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Card — forced dark/green in both modes, exact same green as Guardians/Roadmap */}
+        {/* Section heading */}
+        <div className="text-center mb-8">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-gradient-gold mb-2">
+            Join the Movement
+          </h2>
+          <p className="text-muted-foreground text-sm max-w-md mx-auto">
+            Be part of the next generation of private, intelligent DeFi.
+          </p>
+        </div>
         <div className="max-w-xl mx-auto dark rounded-3xl text-white" style={{ colorScheme: "dark" }}>
           <div className="rounded-3xl p-10 text-center relative overflow-hidden border border-[hsl(43_78%_62%_/_0.18)]" style={{ background: "hsl(158 40% 12%)" }}>
             {/* Top accent line */}

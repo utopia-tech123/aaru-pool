@@ -1,5 +1,5 @@
 import { ShieldAlert, Activity, AlertTriangle, Lock } from "lucide-react";
-import { FloatingLotusCluster, HieroglyphStrip } from "@/components/EgyptianDecor";
+import { FloatingLotusCluster, HieroglyphStrip, LightSectionDecor } from "@/components/EgyptianDecor";
 
 const problems = [
   {
@@ -33,6 +33,7 @@ const ProblemSection = () => {
     <section id="problem" className="py-14 relative overflow-hidden bg-gradient-egyptian">
       <div className="absolute inset-0 mesh-grid opacity-30 pointer-events-none" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-destructive/8 blur-[80px] pointer-events-none" />
+      <LightSectionDecor />
       <FloatingLotusCluster lotuses={[
         { top: "15%",  left: "2%",   size: 38, delay: "0s",   color: "gold",    opacity: 0.30 },
         { bottom: "10%", right: "3%", size: 30, delay: "2.1s", color: "emerald", opacity: 0.25 },
