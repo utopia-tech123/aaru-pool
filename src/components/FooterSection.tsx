@@ -51,13 +51,15 @@ const FooterSection = () => {
             <h4 className="font-heading text-sm font-semibold text-foreground mb-5 tracking-wide">Legal</h4>
             <ul className="space-y-3">
               {[
-                { label: "Privacy Policy", href: "#" },
-                { label: "Terms of Service", href: "#" },
-                { label: "Risk Disclaimer", href: "#" },
+                { label: "Privacy Policy", href: "https://drive.google.com/file/d/1c_spuGulLOnVvzIwZAmhfHkTA4CG5rl5/view?usp=sharing" },
+                { label: "Terms of Service", href: "https://drive.google.com/file/d/1tV0hS_dyx-1G0f6ST4KUv9rOGhF0_L0m/view?usp=sharing" },
+                { label: "Risk Disclaimer", href: "https://drive.google.com/file/d/1PdcVllE_GDZxjg6p_egETA6nAPc30mbQ/view?usp=sharing" },
               ].map(({ label, href }) => (
                 <li key={label}>
                   <a
                     href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {label}
