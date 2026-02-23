@@ -1,5 +1,6 @@
 import { ShieldAlert, Activity, AlertTriangle, Lock } from "lucide-react";
 import { FloatingLotusCluster, HieroglyphStrip, LightSectionDecor } from "@/components/EgyptianDecor";
+import ScrollReveal, { StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
 
 const problems = [
   {
@@ -40,39 +41,41 @@ const ProblemSection = () => {
       ]} />
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Label */}
-        <div className="flex justify-center mb-5">
-          <span className="badge-pill" style={{ background: "hsl(var(--destructive) / 0.1)", borderColor: "hsl(var(--destructive) / 0.3)", color: "hsl(var(--destructive))" }}>
-            The Problem
-          </span>
-        </div>
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-2 pb-3 text-gradient-gold">
-          High-Yield DeFi Remains Inaccessible
-        </h2>
-        <p className="text-center text-muted-foreground mb-10 max-w-xl mx-auto text-sm">
-          The current DeFi landscape creates systemic barriers that prevent most investors from safely capturing yield.
-        </p>
+        <ScrollReveal>
+          <div className="flex justify-center mb-5">
+            <span className="badge-pill" style={{ background: "hsl(var(--destructive) / 0.1)", borderColor: "hsl(var(--destructive) / 0.3)", color: "hsl(var(--destructive))" }}>
+              The Problem
+            </span>
+          </div>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-2 pb-3 text-gradient-gold">
+            High-Yield DeFi Remains Inaccessible
+          </h2>
+          <p className="text-center text-muted-foreground mb-10 max-w-xl mx-auto text-sm">
+            The current DeFi landscape creates systemic barriers that prevent most investors from safely capturing yield.
+          </p>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
           {problems.map((p) => (
-            <div
-              key={p.title}
-              className={`group rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 glow-card ${
-                p.accent ? "glass-emerald" : "glass-gold"
-              }`}
-            >
-              <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-5 ${
-                p.accent
-                  ? "bg-accent/15 border border-accent/20"
-                  : "bg-primary/10 border border-primary/20"
-              }`}>
-                <p.icon className={p.accent ? "text-accent" : "text-primary"} size={20} />
+            <StaggerItem key={p.title}>
+              <div
+                className={`group rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 glow-card h-full ${
+                  p.accent ? "glass-emerald" : "glass-gold"
+                }`}
+              >
+                <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-5 ${
+                  p.accent
+                    ? "bg-accent/15 border border-accent/20"
+                    : "bg-primary/10 border border-primary/20"
+                }`}>
+                  <p.icon className={p.accent ? "text-accent" : "text-primary"} size={20} />
+                </div>
+                <h3 className="font-heading text-base font-semibold mb-2 text-foreground">{p.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
               </div>
-              <h3 className="font-heading text-base font-semibold mb-2 text-foreground">{p.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
         <HieroglyphStrip className="mt-10" opacity={12} />
       </div>
     </section>
