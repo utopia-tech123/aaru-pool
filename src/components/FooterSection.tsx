@@ -29,7 +29,7 @@ const FooterSection = () => {
               {[
                 { icon: Send, label: "Telegram", href: "https://t.me/aarupool" },
                 { icon: Twitter, label: "X (Twitter)", href: "https://x.com/aarupool" },
-                { icon: MessageCircle, label: "Discord", href: "https://discord.gg/3VhrnNF3WU" },
+                { icon: MessageCircle, label: "Discord", href: "https://discord.com/invite/3VhrnNF3WU" },
               ].map(({ icon: Icon, label, href }) => (
                 <li key={label}>
                   <a
