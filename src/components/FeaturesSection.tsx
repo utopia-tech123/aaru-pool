@@ -1,5 +1,6 @@
 import { Layers, Bot, Vote, Eye, Shield, DollarSign } from "lucide-react";
 import { FloatingLotusCluster, HieroglyphStrip, LightSectionDecor } from "@/components/EgyptianDecor";
+import ScrollReveal, { StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
 
 const features = [
   { icon: Layers, title: "Specialized Pools", desc: "Stablecoin, BTC, and Crypto Privacy pools with varying epoch lengths across chains.", emerald: false },
@@ -22,36 +23,39 @@ const FeaturesSection = () => {
       ]} />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex justify-center mb-5">
-          <span className="badge-pill">Key Features</span>
-        </div>
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-4 pb-2 text-gradient-gold">
-          Built for the Next Era of DeFi
-        </h2>
-        <p className="text-center text-muted-foreground mb-10 max-w-xl mx-auto text-sm">
-          Every component of Aaru Pool is engineered for maximum yield, minimum friction, and absolute privacy.
-        </p>
+        <ScrollReveal>
+          <div className="flex justify-center mb-5">
+            <span className="badge-pill">Key Features</span>
+          </div>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-4 pb-2 text-gradient-gold">
+            Built for the Next Era of DeFi
+          </h2>
+          <p className="text-center text-muted-foreground mb-10 max-w-xl mx-auto text-sm">
+            Every component of Aaru Pool is engineered for maximum yield, minimum friction, and absolute privacy.
+          </p>
+        </ScrollReveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+        <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
           {features.map((f) => (
-            <div
-              key={f.title}
-              className={`group rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 glow-card ${
-                f.emerald ? "glass-emerald" : "glass-gold"
-              }`}
-            >
-              <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-5 transition-colors ${
-                f.emerald
-                  ? "bg-accent/15 border border-accent/20 group-hover:bg-accent/25"
-                  : "bg-primary/10 border border-primary/20 group-hover:bg-primary/20"
-              }`}>
-                <f.icon className={f.emerald ? "text-accent" : "text-primary"} size={20} />
+            <StaggerItem key={f.title}>
+              <div
+                className={`group rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 glow-card h-full ${
+                  f.emerald ? "glass-emerald" : "glass-gold"
+                }`}
+              >
+                <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-5 transition-colors ${
+                  f.emerald
+                    ? "bg-accent/15 border border-accent/20 group-hover:bg-accent/25"
+                    : "bg-primary/10 border border-primary/20 group-hover:bg-primary/20"
+                }`}>
+                  <f.icon className={f.emerald ? "text-accent" : "text-primary"} size={20} />
+                </div>
+                <h3 className="font-heading text-base font-semibold mb-2 text-foreground">{f.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
               </div>
-              <h3 className="font-heading text-base font-semibold mb-2 text-foreground">{f.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
         <HieroglyphStrip className="mt-12" opacity={12} />
       </div>
     </section>

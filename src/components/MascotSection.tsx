@@ -2,6 +2,7 @@ import mascotWave from "@/assets/mascot-wave.png";
 import mascotLotus from "@/assets/mascot-lotus.png";
 import mascotCoin from "@/assets/mascot-coin.png";
 import { NileWave, FloatingLotusCluster, HieroglyphStrip, NileRipple } from "@/components/EgyptianDecor";
+import ScrollReveal, { StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
 
 const mascots = [
   {
@@ -53,45 +54,49 @@ const MascotSection = () => {
         <HieroglyphStrip className="mb-10" opacity={18} />
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex justify-center mb-5">
-            <span className="badge-pill">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse-glow inline-block" />
-              The Guardians of Aaru
-            </span>
-          </div>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-3 text-gradient-gold">
-            Three Paths. One Protocol.
-          </h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-lg mx-auto text-sm leading-relaxed">
-            The Guardians of Aaru embody the three pillars of the protocol: governance, yield, and performance.
-          </p>
+          <ScrollReveal>
+            <div className="flex justify-center mb-5">
+              <span className="badge-pill">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse-glow inline-block" />
+                The Guardians of Aaru
+              </span>
+            </div>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-3 text-gradient-gold">
+              Three Paths. One Protocol.
+            </h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-lg mx-auto text-sm leading-relaxed">
+              The Guardians of Aaru embody the three pillars of the protocol: governance, yield, and performance.
+            </p>
+          </ScrollReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto" staggerDelay={0.15}>
             {mascots.map((m) => (
-              <div
-                key={m.title}
-                className={`group relative rounded-3xl p-6 pb-8 text-center ${m.glass} transition-all duration-500 hover:-translate-y-2 glow-card overflow-hidden`}
-              >
-                <span className="absolute top-4 right-5 font-['NotoSansEgyptian'] text-primary/25 text-3xl select-none" aria-hidden>
-                  {m.glyph}
-                </span>
-                <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+              <StaggerItem key={m.title}>
+                <div
+                  className={`group relative rounded-3xl p-6 pb-8 text-center ${m.glass} transition-all duration-500 hover:-translate-y-2 glow-card overflow-hidden h-full`}
+                >
+                  <span className="absolute top-4 right-5 font-['NotoSansEgyptian'] text-primary/25 text-3xl select-none" aria-hidden>
+                    {m.glyph}
+                  </span>
+                  <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
-                <div className="relative inline-block mb-4">
-                  <div className="absolute inset-0 rounded-full bg-primary/8 scale-125 blur-xl group-hover:bg-primary/15 transition-all duration-500" />
-                  <img
-                    src={m.img}
-                    alt={m.alt}
-                    className="relative w-28 h-28 sm:w-36 sm:h-36 object-contain mx-auto animate-float drop-shadow-lg"
-                    style={{ animationDelay: m.delay }}
-                  />
+                  <div className="relative inline-block mb-4">
+                    <div className="absolute inset-0 rounded-full bg-primary/8 scale-125 blur-xl group-hover:bg-primary/15 transition-all duration-500" />
+                    <img
+                      src={m.img}
+                      alt={m.alt}
+                      loading="lazy"
+                      className="relative w-28 h-28 sm:w-36 sm:h-36 object-contain mx-auto animate-float drop-shadow-lg"
+                      style={{ animationDelay: m.delay }}
+                    />
+                  </div>
+
+                  <h3 className="font-heading text-lg font-bold mb-2 text-gradient-gold">{m.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{m.desc}</p>
                 </div>
-
-                <h3 className="font-heading text-lg font-bold mb-2 text-gradient-gold">{m.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{m.desc}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
 
           <NileRipple className="mt-12 opacity-50" />
         </div>

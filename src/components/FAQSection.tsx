@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { FloatingLotusCluster, HieroglyphStrip, LightSectionDecor } from "@/components/EgyptianDecor";
+import ScrollReveal, { StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
 
 const faqs = [
   {
@@ -36,33 +37,38 @@ const FAQSection = () => {
       ]} />
 
       <div className="container mx-auto px-4 max-w-2xl relative z-10">
-        <div className="flex justify-center mb-5">
-          <span className="badge-pill">FAQs</span>
-        </div>
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-4 pb-2 text-gradient-gold">
-          Frequently Asked Questions
-        </h2>
-        <p className="text-center text-muted-foreground mb-10 text-sm">
-          Everything you need to know about Aaru Pool.
-        </p>
+        <ScrollReveal>
+          <div className="flex justify-center mb-5">
+            <span className="badge-pill">FAQs</span>
+          </div>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-4 pb-2 text-gradient-gold">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-center text-muted-foreground mb-10 text-sm">
+            Everything you need to know about Aaru Pool.
+          </p>
+        </ScrollReveal>
 
-        <Accordion type="single" collapsible className="space-y-3">
-          {faqs.map((f, i) => (
-            <AccordionItem
-              key={i}
-              value={`item-${i}`}
-              className="glass-gold rounded-2xl px-6 overflow-hidden border-0 relative"
-            >
-              <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-              <AccordionTrigger className="text-sm font-body font-semibold text-foreground hover:text-primary hover:no-underline py-5">
-                {f.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-5">
-                {f.a}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        <StaggerContainer staggerDelay={0.1}>
+          <Accordion type="single" collapsible className="space-y-3">
+            {faqs.map((f, i) => (
+              <StaggerItem key={i}>
+                <AccordionItem
+                  value={`item-${i}`}
+                  className="glass-gold rounded-2xl px-6 overflow-hidden border-0 relative"
+                >
+                  <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+                  <AccordionTrigger className="text-sm font-body font-semibold text-foreground hover:text-primary hover:no-underline py-5">
+                    {f.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-5">
+                    {f.a}
+                  </AccordionContent>
+                </AccordionItem>
+              </StaggerItem>
+            ))}
+          </Accordion>
+        </StaggerContainer>
         <HieroglyphStrip className="mt-10" opacity={12} />
       </div>
     </section>

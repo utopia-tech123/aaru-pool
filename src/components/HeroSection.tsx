@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
 import avatar from "@/assets/avatar.jpeg";
 
@@ -41,7 +42,12 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto text-center px-4 pt-28 pb-20">
+      <motion.div
+        className="relative z-10 container mx-auto text-center px-4 pt-28 pb-20"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+      >
 
         {/* Hieroglyph top bar */}
         <div className="mb-6">
@@ -132,7 +138,7 @@ const HeroSection = () => {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
     </div>
   );
